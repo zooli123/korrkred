@@ -1,0 +1,11 @@
+.year{
+	width: 60px;
+}
+.half_year{
+	width: 30px;
+}
+#semesters{
+	max-height: 400px;
+	overflow-y:auto;
+	width: 150px;
+}
