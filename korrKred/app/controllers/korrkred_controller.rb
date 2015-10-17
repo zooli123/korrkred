@@ -7,14 +7,8 @@ class KorrkredController < ApplicationController
 	def subjects
 	end
 	def semesters
-		semesters = Semester.all
-		@semesters = Array.new
-		for s in semesters
-			sem = Array.new
-			sem.push(s.year)
-			sem.push(s.half_year)
-			@semesters.push(sem);
-		end
+		@semesters = Semester.all
+		gon.semesters = @semesters
 
 	end
 	def semesters_new

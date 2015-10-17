@@ -5,7 +5,6 @@ $(document).ready(function(){
 		var half_year = document.createElement("input");
 		var br = document.createElement("br");
     year.type = "number";
-    year.value = "<%= @semesters.to_s %>";
     year.min = "1970";
     year.max = "3000";
     year.className = "year";
@@ -17,5 +16,7 @@ $(document).ready(function(){
 		body.appendChild(half_year);
 		body.appendChild(br);
 	})
-	console.log('<%= @semesters.to_s %>');
+	for(var i = 0; i < gon.semesters.length; i++){
+		console.log(gon.semesters[i].id);
+	}
 })
