@@ -9,9 +9,17 @@
 </head>
 <body>
 	<h1>
-		<%=t(:label_welcome)%>
+		<%=t(:label_title)%>
 	</h1>
-<%= yield %>
+	<div class="language_selection">[
+		<%if I18n.locale.to_s == "en"%>
+			<%=link_to t(:label_hungarian), change_locale_path(:locale => "hu", :site => request.path)%>
+		<%else%>
+			<%=link_to t(:label_english), change_locale_path(:locale => "en", :site => request.path)%>
+		<%end%>
+	]</div>
+
+	<%= yield %>
 
 </body>
 </html>

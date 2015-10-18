@@ -20,8 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  label_welcome: "Welcome!"
+  label_welcome: "Welcome to KorrKred!"
   label_subjects: "Subjects"
   label_semesters: "Semesters"
   label_back_to_home: "Back to home"
   label_add_new_semester: "Add new semester"
+  label_login: Username
+  label_firstname: First name
+  label_lastname: Last name
+  label_password: Password
+  label_create_account: Create account
+  label_signup: Sign up
+  label_title: KorrKred
+  label_english: English
+  label_hungarian: Magyar
+
+  notice_login_occupied: "Login name already in use!"
+  notice_successfully_registered: "Registration successful!"

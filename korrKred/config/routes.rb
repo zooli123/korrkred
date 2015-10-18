@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  root 'korrkred#home', as: 'korrkred'
-  get 'subjects'  => 'korrkred#subjects'
-  get 'semesters'  => 'korrkred#semesters'
+  root   'korrkred#home', as: 'korrkred'
+  get    'users/:id' => 'users#index', as:"index"
+  # post   'user/:id' => 'user#create'
+  get    'signup' => 'users#new', as: "signup"
+  get    'subjects'  => 'korrkred#subjects'
+  get    'semesters'  => 'korrkred#semesters'
+  get    'application/change_locale/:locale' => 'application#change_locale', as: "change_locale"
+  get    'login'   => 'sessions#new', as: "login"
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
