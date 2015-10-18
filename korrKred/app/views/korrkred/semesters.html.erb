@@ -1,15 +1,14 @@
-<h2><%=t(:label_semesters)%></h2>
-</br>
-</br>
-<%=link_to t(:label_back_to_home), home_path%>
-</br>
-</br>
-<div id="semesters">
-<%for semester in @semesters %>
-	<input type="submit" class="exisiting_years" value="<%=semester.year.to_s + "/" + semester.half_year.to_s%>"/>
-	<input type="hidden" value="<%=semester.id.to_s%>"/>
-</br>
-<%end%>
-</div>
+<div class="background_div">
+<%=link_to t(:label_back_to_home), home_path, class: "back_to_home_link"%>
+<h2 class="semesters"><%=t(:label_semesters)%></h2>
+  <div class="semesters_div">
+    <div class="semesters_table_div">
+      <%for semester in @semesters %>
+          <input type="submit" class="exisiting_years" value="<%=semester.year.to_s + "/" + semester.half_year.to_s%>"/>
+          <input type="hidden" value="<%=semester.id.to_s%>"/>
+      <%end%>
+      <div id="new_semesters"></div>
 <input id="add_new_semester_button" type="button" value="<%=t(:label_add_new_semester)%>"/>
-
+    </div>
+  </div>
+</div>

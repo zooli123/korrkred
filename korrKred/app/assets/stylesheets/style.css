@@ -4,13 +4,14 @@
 .half_year{
 	width: 30px;
 }
-#semesters{
-	max-height: 400px;
+
+#new_semesters{
+	max-height: 216px;
 	overflow-y:auto;
 	width: 150px;
 }
 
-input, textarea, select, .uneditable-input {
+input, textarea, select{
   border: 1px solid #bbb;
   margin-bottom: 15px;
 }
@@ -19,7 +20,7 @@ input {
   height: auto !important;
 }
 
-.backgroud_div{
+.background_div{
 	position: absolute;
 	width: 600px;
 	left: 50%;
@@ -34,7 +35,7 @@ input {
 	box-shadow: 20px 20px 10px #C6CCCF;
 }
 
-.sign_up_div, .login_div{
+.sign_up_div, .login_div, .semesters_div{
 	position: relative;
 	background: transparent;
 	width: 400px;
@@ -43,7 +44,7 @@ input {
 	margin-left: -200px;
 }
 
-.sign_up_table_div, .login_table_div{
+.sign_up_table_div, .login_table_div, .semesters_table_div{
 	position: relative;
 }
 
@@ -59,7 +60,7 @@ h1{
 	margin: -20px;
 }
 
-h2.signup, h2.login{
+h2.signup, h2.login, h2.semesters{
 	position:absolute;
 	top:20px;
 }
@@ -120,5 +121,12 @@ a:hover, a:active {
 }
 .links{
   text-align: center;
-
 }
+
+a.back_to_home_link{
+  text-decoration: none;
+  position:absolute;
+  bottom:20px;
+  right:20px;
+}
+

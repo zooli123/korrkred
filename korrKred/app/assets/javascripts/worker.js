@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$("#add_new_semester_button").on("click", function(){
-		var body = document.getElementById("semesters");
+		var body = document.getElementById("new_semesters");
 		var year = document.createElement("input");
 		var half_year = document.createElement("input");
 		var br = document.createElement("br");
