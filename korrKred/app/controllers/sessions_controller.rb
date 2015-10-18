@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
   end
-
+  # create session, login, if user and password matches, error message, if not
   def create
     user = User.find_by(login: params[:session][:login].downcase)
     if user && user.password == params[:session][:password]
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     return
   end
 
-
+  # neccessary for logout
   def destroy
     log_out
     redirect_to root_url

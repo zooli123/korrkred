@@ -1,5 +1,5 @@
 hu:
-  label_welcome: "Üdvözöllek a KorrKred oldalon!"
+  label_welcome: "Üdvözöllek a KorrKred oldalon "
   label_subjects: "Tantárgyak"
   label_semesters: "Félévek"
   label_back_to_home: Vissza a főoldalra
@@ -18,7 +18,7 @@ hu:
   label_login: Bejelentkezés
   label_logout: Kijelentkezés
   label_successful_login: Sikeres bejelentkezés!
-
+  label_logged_in_as: Bejelentkezve mint
 
   notice_login_occupied: "A felhasználónév már foglalt!"
   notice_successfully_registered: "Sikeres regisztráció!"

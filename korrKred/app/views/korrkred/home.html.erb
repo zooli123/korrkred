@@ -1,6 +1,7 @@
+<div class="links">
 <%=link_to t(:label_subjects), "/subjects"%>
 <%=link_to t(:label_semesters), "/semesters"%>
+</div>
 <% if flash[:success] %>
     <div id="success"><%= flash[:success] %></div>
 <% end %>
-<%=t(:label_welcome) + " " + @name + "!"%>

@@ -8,20 +8,35 @@
   <%= Gon::Base.render_data %>
 </head>
 <body>
-	<h1>
-		<%=t(:label_title)%>
-	</h1>
-	<div class="language_selection">[
-		<%if I18n.locale.to_s == "en"%>
-			<%=link_to t(:label_hungarian), change_locale_path(:locale => "hu", :site => request.path)%>
-		<%else%>
-			<%=link_to t(:label_english), change_locale_path(:locale => "en", :site => request.path)%>
-		<%end%>
-	]</div>
+<%if logged_in?
+  user = current_user
+  @name_english = user.firstname + " " + user.lastname
+  @name_hungarian = user.lastname + " " + user.firstname
+  if I18n.locale.to_s == "en"
+    name = @name_english
+  else
+    name = @name_hungarian
+  end
+end
+%>
+  <h1>
+    <%=t(:label_title)%>
+  </h1>
+  <div class="language_selection">[
+    <%if I18n.locale.to_s == "en"%>
+      <%=link_to t(:label_hungarian), change_locale_path(:locale => "hu", :site => request.path)%>
+    <%else%>
+      <%=link_to t(:label_english), change_locale_path(:locale => "en", :site => request.path)%>
+    <%end%>
+  ]</div>
+
 <%if logged_in?%>
   <div class="logout_div">
+    <%=t(:label_logged_in_as) + ": " + name%>
+  </br>
     <%= link_to t(:label_logout), logout_path%>
-	</div>
+  </div>
+  
 <%end%>
   <%= yield %>
 

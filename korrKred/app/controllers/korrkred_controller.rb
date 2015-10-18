@@ -4,7 +4,8 @@ class KorrkredController < ApplicationController
 	end
 	def home
 		user = current_user
-		@name = user.firstname + " " + user.lastname
+		@name_english = user.firstname + " " + user.lastname
+		@name_hungarian = user.lastname + " " + user.firstname
 	end
 	def subjects
 		@current_user = current_user

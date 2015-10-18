@@ -1,5 +1,5 @@
 en:
-  label_welcome: "Welcome to KorrKred!"
+  label_welcome: "Welcome to KorrKred"
   label_subjects: "Subjects"
   label_semesters: "Semesters"
   label_back_to_home: "Back to home"
@@ -18,6 +18,7 @@ en:
   label_login: Log in
   label_logout: Log out
   label_successful_login: Successfully logged in!
+  label_logged_in_as: Logged in as
 
   notice_login_occupied: "Login name already in use!"
   notice_successfully_registered: "Registration successful!"
