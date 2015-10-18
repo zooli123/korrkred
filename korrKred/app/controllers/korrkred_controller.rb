@@ -3,7 +3,8 @@ class KorrkredController < ApplicationController
 	def index		
 	end
 	def home
-		@current_user = current_user
+		user = current_user
+		@name = user.firstname + " " + user.lastname
 	end
 	def subjects
 		@current_user = current_user

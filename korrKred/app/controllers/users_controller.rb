@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = t(:notice_successfully_registered)
       log_in @user
-      redirect_to @user
+      redirect_to home_path
     end
   end
 	def update

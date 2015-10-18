@@ -18,10 +18,11 @@
 			<%=link_to t(:label_english), change_locale_path(:locale => "en", :site => request.path)%>
 		<%end%>
 	]</div>
-
+<%if logged_in?%>
   <div class="logout_div">
     <%= link_to t(:label_logout), logout_path%>
 	</div>
+<%end%>
   <%= yield %>
 
 </body>
