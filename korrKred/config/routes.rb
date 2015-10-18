@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root   'korrkred#home', as: 'korrkred'
+  root   'sessions#new'
   get    'users/:id' => 'users#index', as:"index"
   # post   'user/:id' => 'user#create'
   get    'signup' => 'users#new', as: "signup"

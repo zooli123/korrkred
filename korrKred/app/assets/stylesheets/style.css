@@ -34,7 +34,7 @@ input {
 	box-shadow: 20px 20px 10px #C6CCCF;
 }
 
-.sign_up_div{
+.sign_up_div, .login_div{
 	position: relative;
 	background: transparent;
 	width: 400px;
@@ -43,7 +43,7 @@ input {
 	margin-left: -200px;
 }
 
-.sign_up_table_div{
+.sign_up_table_div, .login_table_div{
 	position: relative;
 }
 
@@ -59,12 +59,14 @@ h1{
 	margin: -20px;
 }
 
-h2.signup{
+h2.signup, h2.login{
 	position:absolute;
 	top:20px;
 }
 
 .language_selection{
+	position: relative;
+	top: -20px;
 	text-align: right;
 	font-weight: bold;
 }
@@ -77,5 +79,13 @@ h2.signup{
 .language_selection a:hover, .language_selection a:active {
 	text-decoration: none;
 	color: grey;
+}
+a:link, a:visited {
+	text-decoration: underline;
+	color: black;
+}
 
+a:hover, a:active {
+	text-decoration: none;
+	color: grey;
 }

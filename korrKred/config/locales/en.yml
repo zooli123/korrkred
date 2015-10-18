@@ -25,7 +25,7 @@ en:
   label_semesters: "Semesters"
   label_back_to_home: "Back to home"
   label_add_new_semester: "Add new semester"
-  label_login: Username
+  label_login_name: Username
   label_firstname: First name
   label_lastname: Last name
   label_password: Password
@@ -34,6 +34,10 @@ en:
   label_title: KorrKred
   label_english: English
   label_hungarian: Magyar
+  label_new_user: New user
+  label_signup_now: Sign up now
+  label_login: Log in
+
 
   notice_login_occupied: "Login name already in use!"
   notice_successfully_registered: "Registration successful!"

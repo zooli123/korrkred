@@ -4,7 +4,7 @@ hu:
   label_semesters: "Félévek"
   label_back_to_home: Vissza a főoldalra
   label_add_new_semester: Új félév felvétele
-  label_login: felhasználónév
+  label_login_name: felhasználónév
   label_firstname: Keresztnév
   label_lastname: Vezetéknév
   label_password: Jelszó
@@ -13,6 +13,9 @@ hu:
   label_title: KorrKred
   label_english: English
   label_hungarian: Magyar
+  label_new_user: Új felhasználó vagy
+  label_signup_now: Regisztrálj most
+  label_login: Bejelentkezés
 
   notice_login_occupied: "A felhasználónév már foglalt!"
   notice_successfully_registered: "Sikeres regisztráció!"
