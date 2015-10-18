@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       respond_to do |format|
         flash[:success] = t(:label_successful_login)
         log_in user
-        format.html { redirect_to "/home/" + user.id.to_s }
+        format.html { redirect_to home_path}
       end
     return
     elsif user && user.password != params[:session][:password]
