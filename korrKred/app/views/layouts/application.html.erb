@@ -19,7 +19,10 @@
 		<%end%>
 	]</div>
 
-	<%= yield %>
+  <div class="logout_div">
+    <%= link_to t(:label_logout), logout_path%>
+	</div>
+  <%= yield %>
 
 </body>
 </html>

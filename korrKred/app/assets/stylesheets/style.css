@@ -89,3 +89,9 @@ a:hover, a:active {
 	text-decoration: none;
 	color: grey;
 }
+
+.logout_div{
+  position: relative;
+  text-align: right;
+  top: -70px;
+}

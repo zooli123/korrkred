@@ -5,22 +5,26 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(login: params[:session][:login].downcase)
-    if user
-      if user.password == params[:session][:password]
-        respond_to do |format|
-          flash[:success] = t(:label_successful_login)
-          log_in user
-          format.html { redirect_to "/home/" + user.id.to_s }
-        end
+    if user && user.password == params[:session][:password]
+      respond_to do |format|
+        flash[:success] = t(:label_successful_login)
+        log_in user
+        format.html { redirect_to "/home/" + user.id.to_s }
       end
-      return
+    return
+    elsif user && user.password != params[:session][:password]
+      respond_to do |format|
+        flash[:error] = t(:error_login_or_password_incorrect)
+        format.html { redirect_to login_path }
+      end
+    return
     else
       respond_to do |format|
         flash[:error] = t(:error_login_or_password_incorrect)
-        format.html { redirect_to '/login' }
+        format.html { redirect_to login_path }
       end
-      return
     end
+    return
   end
 
 

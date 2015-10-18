@@ -16,6 +16,7 @@ hu:
   label_new_user: Új felhasználó vagy
   label_signup_now: Regisztrálj most
   label_login: Bejelentkezés
+  label_logout: Kijelentkezés
   label_successful_login: Sikeres bejelentkezés!
 
 
