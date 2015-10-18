@@ -37,7 +37,9 @@ en:
   label_new_user: New user
   label_signup_now: Sign up now
   label_login: Log in
-
+  label_successful_login: Successfully logged in!
 
   notice_login_occupied: "Login name already in use!"
   notice_successfully_registered: "Registration successful!"
+
+  error_login_or_password_incorrect: Login name or password incorrect!

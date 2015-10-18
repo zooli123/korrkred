@@ -16,6 +16,10 @@ hu:
   label_new_user: Új felhasználó vagy
   label_signup_now: Regisztrálj most
   label_login: Bejelentkezés
+  label_successful_login: Sikeres bejelentkezés!
+
 
   notice_login_occupied: "A felhasználónév már foglalt!"
   notice_successfully_registered: "Sikeres regisztráció!"
+
+  error_login_or_password_incorrect: Érvénytelen felhasználónév vagy jelszó!

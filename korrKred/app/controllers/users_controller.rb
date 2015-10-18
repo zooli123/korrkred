@@ -27,15 +27,13 @@ class UsersController < ApplicationController
     end
 
     if @user.save
-      respond_to do |format|
-        flash[:success] = t(:notice_successfully_registered)
-        format.html { render :action => '/index' }
-      end
+      flash[:success] = t(:notice_successfully_registered)
+      log_in @user
+      redirect_to @user
     end
   end
 	def update
 	end
-
 
 	private
 	  def user_params

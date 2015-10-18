@@ -1,2 +1,9 @@
 <%=link_to t(:label_subjects), "/subjects"%>
 <%=link_to t(:label_semesters), "/semesters"%>
+<% if flash[:success] %>
+    <div id="success"><%= flash[:success] %></div>
+<% end %>
+
+<%=@id.id.to_s%>
+
+<%= link_to "logout", logout_path%>

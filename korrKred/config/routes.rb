@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   root   'sessions#new'
-  get    'users/:id' => 'users#index', as:"index"
-  # post   'user/:id' => 'user#create'
+  # get    'users/:id' => 'users#index', as:"index"
   get    'signup' => 'users#new', as: "signup"
+  get    'home/:id'  => 'korrkred#home', as: "home"
   get    'subjects'  => 'korrkred#subjects'
   get    'semesters'  => 'korrkred#semesters'
   get    'application/change_locale/:locale' => 'application#change_locale', as: "change_locale"
   get    'login'   => 'sessions#new', as: "login"
   post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get    'logout'  => 'sessions#destroy'
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

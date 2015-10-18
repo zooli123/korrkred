@@ -3,6 +3,7 @@ class KorrkredController < ApplicationController
 	def index		
 	end
 	def home
+		@id = current_user
 	end
 	def subjects
 	end
