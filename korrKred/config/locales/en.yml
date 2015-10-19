@@ -19,8 +19,13 @@ en:
   label_logout: Log out
   label_successful_login: Successfully logged in!
   label_logged_in_as: Logged in as
+  label_save_semesters: Save semesters
 
-  notice_login_occupied: "Login name already in use!"
-  notice_successfully_registered: "Registration successful!"
+  success_semesters_saved: Semesters saved
+  success_semester_saved: Semester saved
+
+  notice_login_occupied: Login name already in use!
+  notice_successfully_registered: Registration successful!
+  notice_no_semesters_saved: No semesters saved
 
   error_login_or_password_incorrect: Login name or password incorrect!

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get    'home'  => 'korrkred#home', as: "home"
   get    'subjects'  => 'korrkred#subjects'
   get    'semesters'  => 'korrkred#semesters'
+  post   'save_semesters' => 'korrkred#semesters_new', as: "save_semesters"
   get    'application/change_locale/:locale' => 'application#change_locale', as: "change_locale"
   get    'login'   => 'sessions#new', as: "login"
   post   'login'   => 'sessions#create'

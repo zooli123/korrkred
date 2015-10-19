@@ -19,8 +19,14 @@ hu:
   label_logout: Kijelentkezés
   label_successful_login: Sikeres bejelentkezés!
   label_logged_in_as: Bejelentkezve mint
+  label_save_semesters: Félévek mentése
 
-  notice_login_occupied: "A felhasználónév már foglalt!"
-  notice_successfully_registered: "Sikeres regisztráció!"
+  success_semesters_saved: Félévek sikeresen elmentve
+  success_semester_saved: Félév sikeresen elmentve
+
+  notice_login_occupied: A felhasználónév már foglalt!
+  notice_successfully_registered: Sikeres regisztráció!
+  notice_no_semesters_saved: Nincs új félév
+
 
   error_login_or_password_incorrect: Érvénytelen felhasználónév vagy jelszó!

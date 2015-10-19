@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     user = User.find_by(login: params[:session][:login].downcase)
     if user && user.password == params[:session][:password]
       respond_to do |format|
-        flash[:success] = t(:label_successful_login)
         log_in user
         format.html { redirect_to home_path}
       end

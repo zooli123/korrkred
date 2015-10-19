@@ -1,14 +1,30 @@
+<% if flash[:success]%>
+  <div id="success"><%= flash[:success] %></div>
+<% end %>
+<% if flash[:notice] %>
+  <div id="notice"><%= flash[:notice] %></div>
+<% end %>
 <div class="background_div">
 <%=link_to t(:label_back_to_home), home_path, class: "back_to_home_link"%>
 <h2 class="semesters"><%=t(:label_semesters)%></h2>
   <div class="semesters_div">
     <div class="semesters_table_div">
-      <%for semester in @semesters %>
-          <input type="submit" class="exisiting_years" value="<%=semester.year.to_s + "/" + semester.half_year.to_s%>"/>
-          <input type="hidden" value="<%=semester.id.to_s%>"/>
+      <% # year szerinti sorrend, ha egy year-ben több half_year van, egy sorba kerül, egyébként külön sorba
+      year = @semesters[0] ? @semesters[0].year : 0%>
+      <%for semester in @semesters%>
+        <%if semester.year != year%>
+          </br>
+        <%end
+        year = semester.year
+        %>
+        <input type="submit" class="exisiting_years" value="<%=semester.year.to_s + "/" + semester.half_year.to_s%>"/>
+        <input type="hidden" value="<%=semester.id.to_s%>"/>
       <%end%>
-      <div id="new_semesters"></div>
-<input id="add_new_semester_button" type="button" value="<%=t(:label_add_new_semester)%>"/>
     </div>
   </div>
+  <%=form_tag(save_semesters_path, method: "post") do%>
+    <div id="new_semesters"></div>
+    <input type="submit" id="save_semesters_button" value="<%=t(:label_save_semesters)%>"/>
+  <%end%>
+  <div id="add_new_semester_button"><%=t(:label_add_new_semester)%><div/>
 </div>

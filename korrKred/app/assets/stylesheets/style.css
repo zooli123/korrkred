@@ -9,7 +9,29 @@
 	max-height: 216px;
 	overflow-y:auto;
 	width: 150px;
+  position: absolute;
+  left: 500px;
+  top: 45px;
 }
+
+#add_new_semester_button{
+  position: absolute;
+  top: 20px;
+  left: 500px;
+  cursor:pointer;
+  height: 20px;
+}
+#add_new_semester_button:hover{
+  color: grey;
+}
+
+#save_semesters_button{
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  left: 500px;
+}
+
 
 input, textarea, select{
   border: 1px solid #bbb;
@@ -46,6 +68,12 @@ input {
 
 .sign_up_table_div, .login_table_div, .semesters_table_div{
 	position: relative;
+}
+
+.semesters_table_div{
+  width: 250px;
+  height: 216px;
+  overflow-y: auto;
 }
 
 .input_field{
@@ -127,6 +155,25 @@ a.back_to_home_link{
   text-decoration: none;
   position:absolute;
   bottom:20px;
-  right:20px;
+  left:500px;
+}
+#success, #notice, #error{
+  width: 600px;
+  position: absolute;
+  left: 50%;
+  top: 180px;
+  text-align: center;
+  margin-right: -300px;
+  margin-left: -300px;
 }
 
+
+#success{
+  color:green;
+}
+#notice{
+  color: orange;
+}
+#error{
+  color: red;
+}
