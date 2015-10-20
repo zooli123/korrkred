@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
 	validates :lastname, presence: true
 	validates :password, presence: true
 	validates :login, presence: true
-	has_many :user_year
 	has_many :subject
-	has_and_belongs_to_many :semester
+  has_many :semester
 end

@@ -1,18 +1,22 @@
 class KorrkredController < ApplicationController
+  before_action :require_login
 
 	def index		
 	end
+
 	def home
 		user = current_user
 		@name_english = user.firstname + " " + user.lastname
 		@name_hungarian = user.lastname + " " + user.firstname
 	end
+
 	def subjects
 		@current_user = current_user
 	end
+
 	def semesters
 		@current_user = current_user
-		@semesters = Semester.order(:year).order(:half_year)
+		@semesters = current_user.semester.order(:year).order(:half_year)
 		gon.semesters = @semesters
 	end
 
@@ -21,28 +25,31 @@ class KorrkredController < ApplicationController
 		saved_semester_count = 0
 
 		if(params[:semester] && params[:semester][:year] && params[:semester][:half_year])
-			semester_years = params[:semester][:year]
-			semester_half_years = params[:semester][:half_year]
-			if semester_years != [""] && semester_half_years != [""]
-				for i in 0..semester_years.size - 1 do
-					# nem üres a year mező, és a megadott határok között mozog
-					if (semester_years[i] != "" && semester_half_years[i] != "") && 
-						(semester_years[i].to_i >= Time.now.year - 1 && semester_years[i].to_i <= Time.now.year + 2)
+			semester_year = params[:semester][:year]
+			semester_half_year = params[:semester][:half_year]
+			semester_title = params[:semester][:title]
+			year = Time.now.year
+			year_min = year - 1
+			year_max = year + 2
 
-						semester = Semester.where("year= :year and half_year= :half_year",
-							{year: "#{semester_years[i]}", half_year: "#{semester_half_years[i]}"})
-						if semester.empty?
-							s = Semester.new
-							s.year = semester_years[i]
-							s.half_year = semester_half_years[i]
-							s.save
-							saved_semester_count += 1
-							puts "count: " + saved_semester_count.to_s
-						end
-					end
+			if semester_year != "" && semester_half_year != "" && semester_year.to_i >= year_min &&
+				semester_year.to_i <= year_max && [1,2].include?(semester_half_year.to_i)
+
+				generated_title = semester_title == "" ? semester_year.to_s + "/" + semester_half_year.to_s : nil
+				semester = Semester.where("user_id= :user_id and title= :title or user_id= :user_id and title= :generated_title",
+                  {title: "#{semester_title}", generated_title: "#{generated_title}", user_id: "#{@current_user.id}"})
+				if semester.empty?
+					s = Semester.new
+					s.title = semester_title != "" ? semester_title : semester_year.to_s + "/" + semester_half_year.to_s
+					s.year = semester_year
+					s.half_year = semester_half_year
+					s.user_id = @current_user.id
+					s.save
+					saved_semester_count += 1
 				end
 			end
 		end
+
 		if saved_semester_count == 0
 			respond_to do |format|
 				flash[:notice] = t(:notice_no_semesters_saved)
@@ -60,4 +67,11 @@ class KorrkredController < ApplicationController
 			end
 		end
 	end
+
+  def require_login
+    unless logged_in?
+      flash[:error] = t(:error_not_logged_in)
+      redirect_to root_path
+    end
+  end
 end

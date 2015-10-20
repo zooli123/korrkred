@@ -11,34 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017060905) do
+ActiveRecord::Schema.define(version: 20151020140803) do
+
+  create_table "semester_subjects", force: :cascade do |t|
+    t.integer  "grade",       limit: 4
+    t.integer  "semester_id", limit: 4
+    t.integer  "subject_id",  limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "semesters", force: :cascade do |t|
-    t.integer  "year",       limit: 4
-    t.integer  "half_year",  limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "title",        limit: 255
+    t.integer  "year",         limit: 4
+    t.integer  "half_year",    limit: 4
+    t.float    "credit_index", limit: 24
+    t.integer  "user_id",      limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name",        limit: 255
-    t.integer  "grade",       limit: 4
     t.integer  "credit",      limit: 4
     t.integer  "semester_id", limit: 4
     t.integer  "user_id",     limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
-  create_table "user_semester_tables", force: :cascade do |t|
-    t.integer "user_id",     limit: 4
-    t.integer "semester_id", limit: 4
-  end
-
-  create_table "user_years", force: :cascade do |t|
-    t.float    "credit_index", limit: 24
-    t.integer  "semester_id",  limit: 4
-    t.integer  "user_id",      limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

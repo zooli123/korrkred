@@ -1,17 +1,11 @@
-.year{
-	width: 60px;
-}
-.half_year{
-	width: 30px;
-}
 
-#new_semesters{
+#new_semester{
 	max-height: 216px;
 	overflow-y:auto;
 	width: 150px;
   position: absolute;
   left: 500px;
-  top: 45px;
+  top: 90px;
 }
 
 #add_new_semester_button{
@@ -25,7 +19,7 @@
   color: grey;
 }
 
-#save_semesters_button{
+#save_semester_button{
   display: none;
   position: absolute;
   bottom: 50px;
@@ -74,6 +68,21 @@ input {
   width: 250px;
   height: 216px;
   overflow-y: auto;
+}
+
+ul{
+  padding: 0px;
+  margin: 0px;
+}
+
+li{
+  margin-top: -13px;
+  margin-bottom: -13px;
+  margin-left: 40px;
+  padding: 0px;
+}
+li:first-child{
+  margin-top: 0px;
 }
 
 .input_field{
@@ -176,4 +185,19 @@ a.back_to_home_link{
 }
 #error{
   color: red;
+}
+
+.new_semester_div{
+  display: none;
+}
+
+.new_semesters_title{
+  width: 100px;
+}
+
+.year{
+  width: 60px;
+}
+.half_year{
+  width: 30px;
 }

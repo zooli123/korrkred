@@ -19,7 +19,10 @@ en:
   label_logout: Log out
   label_successful_login: Successfully logged in!
   label_logged_in_as: Logged in as
-  label_save_semesters: Save semesters
+  label_save_semester: Save semester
+  label_new_semester_title: Title
+  label_year: Year
+  label_half_year: Half year
 
   success_semesters_saved: Semesters saved
   success_semester_saved: Semester saved
@@ -27,5 +30,7 @@ en:
   notice_login_occupied: Login name already in use!
   notice_successfully_registered: Registration successful!
   notice_no_semesters_saved: No semesters saved
+  notice_title_match_error: Semester title already exists
 
   error_login_or_password_incorrect: Login name or password incorrect!
+  error_not_logged_in: Please log in first!
