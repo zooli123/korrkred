@@ -97,7 +97,7 @@ h1{
 	margin: -20px;
 }
 
-h2.signup, h2.login, h2.semesters{
+h2.signup, h2.login, h2.semesters, h2.subjects{
 	position:absolute;
 	top:20px;
 }

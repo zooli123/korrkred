@@ -30,6 +30,7 @@ en:
   notice_login_occupied: Login name already in use!
   notice_successfully_registered: Registration successful!
   notice_no_semesters_saved: No semesters saved
+  notice_no_save_existing_title: Title already exists for given year
   notice_title_match_error: Semester title already exists
 
   error_login_or_password_incorrect: Login name or password incorrect!

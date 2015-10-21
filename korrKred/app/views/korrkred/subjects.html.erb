@@ -1,2 +1,17 @@
-<%=link_to t(:label_back_to_home), home_path%>
-subjects
+<% if flash[:success]%>
+  <div id="success"><%= flash[:success] %></div>
+<% end %>
+<% if flash[:notice] %>
+  <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+  <div class="background_div">
+  <%=link_to t(:label_back_to_home), home_path, class: "back_to_home_link"%>
+  <h2 class="subjects"><%=t(:label_subjects)%></h2>
+    <div class="semesters_div">
+      <div class="semesters_table_div">
+
+      </div>
+    </div>
+   <%= render partial: "new_semester"%>
+    <div id="add_new_semester_button"><%=t(:label_add_new_semester)%><div/>
+  </div>

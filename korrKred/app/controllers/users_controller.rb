@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     end
 
     if @user.save
-      flash[:success] = t(:notice_successfully_registered)
       log_in @user
       redirect_to home_path
     end

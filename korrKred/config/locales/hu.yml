@@ -30,6 +30,7 @@ hu:
   notice_login_occupied: A felhasználónév már foglalt!
   notice_successfully_registered: Sikeres regisztráció!
   notice_no_semesters_saved: Nincs új félév
+  notice_no_save_existing_title: A megadott évben a cím már foglalt
   notice_title_match_error: Félév cím egyezés
 
   error_login_or_password_incorrect: Érvénytelen felhasználónév vagy jelszó!

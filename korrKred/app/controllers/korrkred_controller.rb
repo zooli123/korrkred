@@ -22,7 +22,8 @@ class KorrkredController < ApplicationController
 
 	def semesters_new
 		@current_user = current_user
-		saved_semester_count = 0
+		saved_semester = false
+		error_existing_title = false
 
 		if(params[:semester] && params[:semester][:year] && params[:semester][:half_year])
 			semester_year = params[:semester][:year]
@@ -36,8 +37,13 @@ class KorrkredController < ApplicationController
 				semester_year.to_i <= year_max && [1,2].include?(semester_half_year.to_i)
 
 				generated_title = semester_title == "" ? semester_year.to_s + "/" + semester_half_year.to_s : nil
-				semester = Semester.where("user_id= :user_id and title= :title or user_id= :user_id and title= :generated_title",
-                  {title: "#{semester_title}", generated_title: "#{generated_title}", user_id: "#{@current_user.id}"})
+
+				semester = Semester.where("user_id= :user_id and title= :title and year= :year or
+																	 user_id= :user_id and title= :generated_title and year= :year",
+								                  {title: "#{semester_title}",
+								                  generated_title: "#{generated_title}",
+								                  user_id: "#{@current_user.id}",
+								                  year: "#{semester_year}"})
 				if semester.empty?
 					s = Semester.new
 					s.title = semester_title != "" ? semester_title : semester_year.to_s + "/" + semester_half_year.to_s
@@ -45,24 +51,26 @@ class KorrkredController < ApplicationController
 					s.half_year = semester_half_year
 					s.user_id = @current_user.id
 					s.save
-					saved_semester_count += 1
+					saved_semester = true
+				else
+					error_existing_title = true
 				end
 			end
 		end
 
-		if saved_semester_count == 0
-			respond_to do |format|
-				flash[:notice] = t(:notice_no_semesters_saved)
-				format.html { redirect_to semesters_path }
-			end
-		elsif saved_semester_count == 1
+		if saved_semester
 			respond_to do |format|
 				flash[:success] = t(:success_semester_saved)
 				format.html { redirect_to semesters_path }
 			end
-		elsif saved_semester_count > 1
+		elsif !saved_semester && !error_existing_title
 			respond_to do |format|
-				flash[:success] = t(:success_semesters_saved)
+				flash[:notice] = t(:notice_no_semesters_saved)
+				format.html { redirect_to semesters_path }
+			end
+		elsif !saved_semester && error_existing_title
+			respond_to do |format|
+				flash[:notice] = t(:notice_no_save_existing_title)
 				format.html { redirect_to semesters_path }
 			end
 		end
