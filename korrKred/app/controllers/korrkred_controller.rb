@@ -10,15 +10,60 @@ class KorrkredController < ApplicationController
 		@name_hungarian = user.lastname + " " + user.firstname
 	end
 
+
+
+#-----subjects------subjects------subjects------subjects------subjects------subjects------subjects------subjects------
+
+
+
+
 	def subjects
 		@current_user = current_user
+		@subjects = @current_user.subject.order(:name)
 	end
+
+	def subjects_new
+		@current_user = current_user
+		current_subject = Subject.new(subject_params)
+		puts "benne? " + (0..20).include?(current_subject.credit).to_s
+		if current_subject.name != "" && current_subject.credit != "" && (0..20).include?(current_subject.credit)
+			subjects = Subject.where("name= :name and user_id= :user_id",
+															 {name: "#{current_subject.name}", user_id: "#{@current_user.id}"})
+			if subjects.empty?
+				current_subject.user_id = @current_user.id
+				current_subject.save
+				respond_to do |format|
+					flash[:success] = t(:success_subject_saved)
+					format.html { redirect_to subjects_path }
+				end
+			else
+				respond_to do |format|
+					flash[:notice] = t(:notice_subject_exists)
+					format.html { redirect_to subjects_path }
+				end
+			end
+		else
+			respond_to do |format|
+				flash[:notice] = t(:notice_no_subject_saved)
+				format.html { redirect_to subjects_path }
+			end
+		end
+	end
+
+
+
+
+#-----semesters------semesters------semesters------semesters------semesters------semesters------semesters------semesters------
+
+
+
 
 	def semesters
 		@current_user = current_user
-		@semesters = current_user.semester.order(:year).order(:half_year)
-		gon.semesters = @semesters
+		@semesters = @current_user.semester.order(:year).order(:half_year)
+		# gon.semesters = @semesters
 	end
+
 
 	def semesters_new
 		@current_user = current_user
@@ -76,10 +121,90 @@ class KorrkredController < ApplicationController
 		end
 	end
 
-  def require_login
-    unless logged_in?
-      flash[:error] = t(:error_not_logged_in)
-      redirect_to root_path
-    end
-  end
+	def semesters_set
+		@current_user = current_user
+		semester = @current_user.semester.where("id= :id",{id: "#{params[:id]}"})
+		if semester.empty?
+			respond_to do |format|
+				flash[:notice] = t(:notice_no_semester_found)
+				format.html {redirect_to semesters_path}
+			end
+		else
+			@semester_title = semester[0].title
+			@semester_id = semester[0].id
+			subjects = @current_user.subject
+			@subjects = Hash.new
+			for s in subjects
+				name = s.name
+				id = s.id
+				@subjects.store(name, id)
+			end
+		end
+	end
+
+
+	def add_subject_to_semester
+		@current_user = current_user
+		if !params[:subject_id] || !params[:grade]
+			respond_to do |format|
+				flash[:notice] = t(:notice_no_subject_added)
+				format.html {redirect_to semesters_add_subject_path}
+			end
+		else
+			subject = params[:subject_id]
+			semester = params[:id]
+			grade = params[:grade]
+
+			semester_subject = SemestersSubjects.new
+			semester_subject.grade = grade
+			semester_subject.semester_id = semester
+			semester_subject.subject_id = subject
+
+			existings = SemestersSubjects.where("subject_id= :subject_id and semester_id= :semester_id",
+																					{subject_id: "#{subject}", semester_id: "#{semester}"})
+			if existings.empty?
+				semester_subject.save
+
+				respond_to do |format|
+					flash[:success] = t(:success_subject_added)
+					format.html {redirect_to semesters_add_subject_path}
+				end
+			else
+				respond_to do |format|
+					flash[:notice] = t(:notice_existing_subject)
+					format.html {redirect_to semesters_add_subject_path}
+				end
+			end
+		end
+					# l = SemestersSubjects.where("subject_id= :subject_id and semester_id= :semester_id", {subject_id: "#{k.id}", semester_id: "#{s.id}"})
+
+	end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private
+	  def subject_params
+	    params.require(:subject).permit(:name, :credit)
+	  end
+
+	  def require_login
+	    unless logged_in?
+	      flash[:error] = t(:error_not_logged_in)
+	      redirect_to root_path
+	    end
+	  end
 end

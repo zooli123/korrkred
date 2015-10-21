@@ -1,0 +1,17 @@
+<% if flash[:success]%>
+  <div id="success"><%= flash[:success] %></div>
+<% end %>
+<% if flash[:notice] %>
+  <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<div class="background_div">
+  <%=link_to t(:label_back_to_semesters), semesters_path, class: "back_to_home_link"%>
+  <h2 class="semesters"><%=@semester_title%></h2>
+    <div class="semesters_div">
+      <div class="semesters_table_div">
+      </div>
+    </div>
+      <%= render partial: "paste_subject"%>
+    <div id="add_new_subject_button"><%=t(:label_add_new_subject)%><div/>
+  </div>
+

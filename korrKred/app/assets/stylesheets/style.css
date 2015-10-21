@@ -1,5 +1,5 @@
 
-#new_semester{
+#new_semester, #new_subject{
 	max-height: 216px;
 	overflow-y:auto;
 	width: 150px;
@@ -8,18 +8,18 @@
   top: 90px;
 }
 
-#add_new_semester_button{
+#add_new_semester_button, #add_new_subject_button{
   position: absolute;
   top: 20px;
   left: 500px;
   cursor:pointer;
   height: 20px;
 }
-#add_new_semester_button:hover{
+#add_new_semester_button:hover, #add_new_subject_button:hover{
   color: grey;
 }
 
-#save_semester_button{
+#save_semester_button, #save_subject_button, #add_subject_button{
   display: none;
   position: absolute;
   bottom: 50px;
@@ -51,7 +51,7 @@ input {
 	box-shadow: 20px 20px 10px #C6CCCF;
 }
 
-.sign_up_div, .login_div, .semesters_div{
+.sign_up_div, .login_div, .semesters_div, .subjects_div{
 	position: relative;
 	background: transparent;
 	width: 400px;
@@ -60,11 +60,11 @@ input {
 	margin-left: -200px;
 }
 
-.sign_up_table_div, .login_table_div, .semesters_table_div{
+.sign_up_table_div, .login_table_div, .semesters_table_div, .subjects_table_div{
 	position: relative;
 }
 
-.semesters_table_div{
+.semesters_table_div, .subjects_table_div{
   width: 250px;
   height: 216px;
   overflow-y: auto;
@@ -88,8 +88,7 @@ li:first-child{
 .input_field{
 	width: 100%;
 }
-body{
-}
+
 h1{
 	background:  #CAD9DE;
 	text-align: center;
@@ -187,7 +186,7 @@ a.back_to_home_link{
   color: red;
 }
 
-.new_semester_div{
+.new_semester_div, .new_subject_div, .paste_subject_div{
   display: none;
 }
 
@@ -198,6 +197,11 @@ a.back_to_home_link{
 .year{
   width: 60px;
 }
-.half_year{
+
+.half_year, .credit, .grade{
   width: 30px;
+}
+
+.new_subject_name{
+  width: 140px;
 }

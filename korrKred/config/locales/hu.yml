@@ -1,37 +1,49 @@
 hu:
-  label_welcome: "Üdvözöllek a KorrKred oldalon "
-  label_subjects: "Tantárgyak"
-  label_semesters: "Félévek"
+  label_welcome: Üdvözöllek a KorrKred oldalon
+  label_title: KorrKred
   label_back_to_home: Vissza a főoldalra
+  label_english: English
+  label_hungarian: Magyar
+
+  label_subjects: Tantárgyak
+  label_add_new_subject: Új tantárgy felvétele
+  label_new_subject_name: Név
+  label_credit: Kredit
+  label_save_subject: Tantárgy mentése
+  success_subject_saved: Tantárgy sikeresen elmentve
+  notice_subject_exists: A tantárgy már létezik
+  notice_no_subject_saved: Mentés sikertelen
+
+  label_semesters: Félévek
   label_add_new_semester: Új félév felvétele
-  label_login_name: felhasználónév
+  label_save_semester: Félév mentése
+  label_new_semester_title: Cím
+  label_year: Év
+  label_half_year: Félév
+  label_back_to_semesters: Vissza a félévekhez
+  success_semester_saved: Félév sikeresen elmentve
+  notice_no_semesters_saved: Nincs új félév
+  notice_no_save_existing_title: A megadott évben a cím már foglalt
+  notice_no_semester_found: Nem található félév
+  label_add_subject: Tantárgy hozzáadása
+  notice_no_subject_added: Hozzáadás sikertelen
+  success_subject_added: Tantárgy hozzáadva
+  notice_existing_subject: A tantárgy már hozzá lett adva
+
+  label_new_user: Új felhasználó vagy
+  label_login_name: Felhasználónév
   label_firstname: Keresztnév
   label_lastname: Vezetéknév
   label_password: Jelszó
   label_create_account: Regisztrálok
   label_signup: Regisztráció
-  label_title: KorrKred
-  label_english: English
-  label_hungarian: Magyar
-  label_new_user: Új felhasználó vagy
   label_signup_now: Regisztrálj most
+  notice_login_occupied: A felhasználónév már foglalt!
+  notice_successfully_registered: Sikeres regisztráció!
+
   label_login: Bejelentkezés
   label_logout: Kijelentkezés
   label_successful_login: Sikeres bejelentkezés!
   label_logged_in_as: Bejelentkezve mint
-  label_save_semester: Félév mentése
-  label_new_semester_title: Cím
-  label_year: Év
-  label_half_year: Félév
-
-  success_semesters_saved: Félévek sikeresen elmentve
-  success_semester_saved: Félév sikeresen elmentve
-
-  notice_login_occupied: A felhasználónév már foglalt!
-  notice_successfully_registered: Sikeres regisztráció!
-  notice_no_semesters_saved: Nincs új félév
-  notice_no_save_existing_title: A megadott évben a cím már foglalt
-  notice_title_match_error: Félév cím egyezés
-
   error_login_or_password_incorrect: Érvénytelen felhasználónév vagy jelszó!
   error_not_logged_in: Kérem jelentkezzen be!

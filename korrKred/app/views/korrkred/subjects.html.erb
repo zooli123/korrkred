@@ -7,11 +7,16 @@
   <div class="background_div">
   <%=link_to t(:label_back_to_home), home_path, class: "back_to_home_link"%>
   <h2 class="subjects"><%=t(:label_subjects)%></h2>
-    <div class="semesters_div">
-      <div class="semesters_table_div">
-
+    <div class="subjects_div">
+      <div class="subjects_table_div">
+        <%if !@subjects.empty? %>
+          <%for subject in @subjects%>
+            <input type="submit" class="existing_subjects" value="<%=subject.name%>"/>
+            <input type="hidden" value="<%=subject.id.to_s%>"/>
+          <%end%>
+        <%end%>
       </div>
     </div>
-   <%= render partial: "new_semester"%>
-    <div id="add_new_semester_button"><%=t(:label_add_new_semester)%><div/>
+   <%= render partial: "new_subject"%>
+    <div id="add_new_subject_button"><%=t(:label_add_new_subject)%><div/>
   </div>

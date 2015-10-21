@@ -1,37 +1,53 @@
 en:
-  label_welcome: "Welcome to KorrKred"
-  label_subjects: "Subjects"
-  label_semesters: "Semesters"
-  label_back_to_home: "Back to home"
-  label_add_new_semester: "Add new semester"
+  label_welcome: Welcome to KorrKred
+  label_title: KorrKred
+  label_back_to_home: Back to home
+  label_english: English
+  label_hungarian: Magyar
+
+  label_subjects: Subjects
+  label_add_new_subject: Add new subject
+  label_new_subject_name: Name
+  label_credit: Credit
+  label_save_subject: Save subject
+  success_subject_saved: Subject saved
+  notice_subject_exists: Subject already exists
+  notice_no_subject_saved: Save unsuccessful
+
+  label_semesters: Semesters
+  label_add_new_semester: Add new semester
+  label_save_semester: Save semester
+  label_new_semester_title: Title
+  label_year: Year
+  label_half_year: Half year
+  label_back_to_semesters: Back to semesters
+  success_semester_saved: Semester saved
+  notice_no_semesters_saved: No semesters saved
+  notice_no_save_existing_title: Title already exists for given year
+  notice_no_semester_found: No semester found
+  label_add_subject: Add subject
+  notice_no_subject_added: No subject added
+  success_subject_added: Subject added
+  notice_existing_subject: Subject already added
+
+  label_new_user: New user
   label_login_name: Username
   label_firstname: First name
   label_lastname: Last name
   label_password: Password
   label_create_account: Create account
   label_signup: Sign up
-  label_title: KorrKred
-  label_english: English
-  label_hungarian: Magyar
-  label_new_user: New user
   label_signup_now: Sign up now
+  notice_login_occupied: Login name already in use!
+  notice_successfully_registered: Registration successful!
+
   label_login: Log in
   label_logout: Log out
   label_successful_login: Successfully logged in!
   label_logged_in_as: Logged in as
-  label_save_semester: Save semester
-  label_new_semester_title: Title
-  label_year: Year
-  label_half_year: Half year
-
-  success_semesters_saved: Semesters saved
-  success_semester_saved: Semester saved
-
-  notice_login_occupied: Login name already in use!
-  notice_successfully_registered: Registration successful!
-  notice_no_semesters_saved: No semesters saved
-  notice_no_save_existing_title: Title already exists for given year
-  notice_title_match_error: Semester title already exists
-
   error_login_or_password_incorrect: Login name or password incorrect!
   error_not_logged_in: Please log in first!
+
+
+
+

@@ -23,6 +23,7 @@
             year = semester.year
             %>
             <li>
+              <%= link_to semester.title, "/semesters/"+ semester.id.to_s%>
               <input type="submit" class="existing_semesters" value="<%=semester.title%>"/>
               <input type="hidden" value="<%=semester.id.to_s%>"/>
             </li>
