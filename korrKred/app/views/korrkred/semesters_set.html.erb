@@ -9,6 +9,11 @@
   <h2 class="semesters"><%=@semester_title%></h2>
     <div class="semesters_div">
       <div class="semesters_table_div">
+        <%for subject in 0...@subjects.size do%>
+          <%=@subjects[subject].name%>: 
+          <%=@grade[subject]%>
+        </br>
+        <%end%>
       </div>
     </div>
       <%= render partial: "paste_subject"%>

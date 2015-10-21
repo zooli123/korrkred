@@ -3,7 +3,7 @@
   <div class="paste_subject_div">
     <div class="new_subject_table_div">
       <div class="input_element">
-        <%= select_tag(:subject_id, options_for_select(@subjects), class: "subject_selection" ) %>
+        <%= select_tag(:subject_id, options_for_select(@all_subjects), class: "subject_selection" ) %>
         <input type="number" class="grade" name="grade" min="1" max="5"/>
       </div>
     </div>

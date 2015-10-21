@@ -130,14 +130,23 @@ class KorrkredController < ApplicationController
 				format.html {redirect_to semesters_path}
 			end
 		else
-			@semester_title = semester[0].title
-			@semester_id = semester[0].id
+			semester = semester[0]
+			@semester_title = semester.title
+			@semester_id = semester.id
 			subjects = @current_user.subject
-			@subjects = Hash.new
+			@all_subjects = Hash.new
 			for s in subjects
 				name = s.name
 				id = s.id
-				@subjects.store(name, id)
+				@all_subjects.store(name, id)
+			end
+
+			@subjects = semester.subject
+			@grade = Array.new
+			for s in @subjects
+				x = SemestersSubjects.where("subject_id= :subject_id and semester_id= :semester_id",
+																	{subject_id: "#{s.id}", semester_id: "#{semester.id}"})
+				@grade.push(x[0].grade)
 			end
 		end
 	end
@@ -176,25 +185,10 @@ class KorrkredController < ApplicationController
 				end
 			end
 		end
-					# l = SemestersSubjects.where("subject_id= :subject_id and semester_id= :semester_id", {subject_id: "#{k.id}", semester_id: "#{s.id}"})
-
 	end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#-----private------private------private------private------private------private------private------private------private------
 
 private
 	  def subject_params
