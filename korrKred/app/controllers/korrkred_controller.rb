@@ -134,6 +134,15 @@ class KorrkredController < ApplicationController
 		end
 	end
 
+	def delete_semester
+		puts "semester: " + params[:semester_id].to_s
+		semester = Semester.find(params[:semester_id])
+		semester.destroy
+		respond_to do |format|
+			format.html { redirect_to semesters_path }
+		end
+	end
+
 	def semesters_set
 		@current_user = current_user
 		semester = @current_user.semester.where("id= :id",{id: "#{params[:id]}"})
