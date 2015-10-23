@@ -36,8 +36,13 @@ end
   </br>
     <%= link_to t(:label_logout), logout_path%>
   </div>
+  <div class="links">
+    <%=link_to t(:label_subjects), subjects_path%>
+    <%=link_to t(:label_semesters), semesters_path%>
+  </div>
   
 <%end%>
+
   <%= yield %>
 
 </body>
