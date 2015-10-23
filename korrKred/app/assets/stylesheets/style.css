@@ -61,7 +61,7 @@ input {
 	margin-left: -200px;
 }
 
-.semesters_set_div{
+.semesters_set_div, .subjects_div{
   left: 40%;
 }
  .form_element_in_table{
@@ -77,10 +77,28 @@ input {
 	position: relative;
 }
 
-.semesters_table_div, .subjects_table_div{
+.semesters_table_div{
   width: 250px;
   height: 216px;
   overflow-y: auto;
+}
+.subjects_table_div{
+  width: 400px;
+  height: 216px;
+  overflow-y: auto;
+}
+
+#existing_subjects_table td{
+  padding-right: 10px;
+}
+
+td.subject_name{
+  width: 200px;
+}
+
+#existing_subjects_table th, .semesters_set_table th{
+  text-align: left;
+  padding-bottom: 10px;
 }
 
 ul{

@@ -13,6 +13,7 @@ hu:
   success_subject_saved: Tantárgy sikeresen elmentve
   notice_subject_exists: A tantárgy már létezik
   notice_no_subject_saved: Mentés sikertelen
+  label_delete: Törlés
 
   label_semesters: Félévek
   label_add_new_semester: Új félév felvétele

@@ -50,6 +50,19 @@ class KorrkredController < ApplicationController
 		end
 	end
 
+	def change_subject
+		actual_subject = Subject.find(params[:subject_id])
+
+		if params[:delete_subject]
+			actual_subject.destroy
+		elsif params[:change_credit]
+			actual_subject.update(credit: params[:credit])
+		end
+
+		respond_to do |format|
+			format.html { redirect_to subjects_path }
+		end
+	end
 
 
 

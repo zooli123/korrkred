@@ -9,14 +9,30 @@
   <h2 class="subjects"><%=t(:label_subjects)%></h2>
     <div class="subjects_div">
       <div class="subjects_table_div">
+        <table id="existing_subjects_table">
         <%if !@subjects.empty? %>
+          <th><%=t(:label_new_subject_name)%></th>
+          <th><%=t(:label_credit)%></th>
           <%for subject in @subjects%>
-            <input type="submit" class="existing_subjects" value="<%=subject.name%>"/>
-            <input type="hidden" value="<%=subject.id.to_s%>"/>
+          <tr>
+            <%=form_tag(change_subject_path, method: "post") do%>
+              <td class="subject_name"><%=subject.name%></td>
+              <td><select class="form_element_in_table" name="credit">
+                <%for i in 0..20%>
+                  <option value="<%=i%>" <%if subject.credit == i%> selected="selected" <%end%>><%=i%></option>
+                <%end%>
+              </select>
+              </td>
+              <td><%= submit_tag t(:label_save), :name =>"change_credit", class: "form_element_in_table"%></td>
+              <td><%= submit_tag t(:label_delete), :name =>"delete_subject", class: "form_element_in_table"%></td>
+              <%=hidden_field_tag 'subject_id', subject.id%>
+            <%end%>
+          </tr>
           <%end%>
         <%end%>
+        </table>
       </div>
     </div>
-   <%= render partial: "new_subject"%>
+    <%= render partial: "new_subject"%>
     <div id="add_new_subject_button"><%=t(:label_add_new_subject)%><div/>
   </div>

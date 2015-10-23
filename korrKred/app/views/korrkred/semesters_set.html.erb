@@ -9,6 +9,8 @@
   <h2 class="semesters"><%=@semester_title%></h2>
   <div class="semesters_set_div">
     <table class="semesters_set_table">
+      <th><%=t(:label_new_subject_name)%></th>
+      <th><%=t(:label_grade)%></th>
       <%for subject in 0...@subjects.size do%>
         <%=form_tag(change_semester_path, method: "post") do%>
       <tr><td>

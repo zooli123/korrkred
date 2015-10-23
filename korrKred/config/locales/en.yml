@@ -13,6 +13,7 @@ en:
   success_subject_saved: Subject saved
   notice_subject_exists: Subject already exists
   notice_no_subject_saved: Save unsuccessful
+  label_delete: Delete
 
   label_semesters: Semesters
   label_add_new_semester: Add new semester
