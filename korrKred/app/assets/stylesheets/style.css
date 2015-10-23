@@ -60,6 +60,9 @@ input {
 	margin-right: -200px;
 	margin-left: -200px;
 }
+.login_div{
+  left: 43%;
+}
 
 .semesters_set_div, .subjects_div{
   left: 30%;
@@ -80,7 +83,7 @@ input {
 }
 
 .semesters_table_div{
-  width: 250px;
+  width: 400px;
   height: 216px;
   overflow-y: auto;
 }
@@ -258,4 +261,9 @@ a.back_to_home_link{
   left: 50%
   margin-right: 25%;
   margin-left: 25%;
+}
+
+.delete_semester{
+  position: absolute;
+  right: 20px;
 }

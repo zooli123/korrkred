@@ -164,8 +164,8 @@ class KorrkredController < ApplicationController
 				id = s.id
 				@all_subjects.store(name, id)
 			end
-
-			@subjects = semester.subject
+			@all_subjects = @all_subjects.sort_by {|name, id| name.downcase}
+			@subjects = semester.subject.sort_by {|subject| subject.name.downcase}
 			@grade = Array.new
 			for s in @subjects
 				x = SemestersSubjects.where("subject_id= :subject_id and semester_id= :semester_id",
