@@ -218,6 +218,38 @@ class KorrkredController < ApplicationController
 		end
 	end
 
+
+
+#-----index_counter------index_counter------index_counter------index_counter------index_counter------index_counter------
+
+def count_index
+	# a grades_credits jegyenként tárolja a krediteket
+	grades_credits = Hash.new
+	s = SemestersSubjects.where(:semester_id => params[:id])
+	for element in s
+		credit = Subject.where(:id => element.subject_id)[0]
+		credit = credit.credit
+		if grades_credits[element.grade]
+			grades_credits[element.grade] += credit
+		else
+			grades_credits.store(element.grade, credit)
+		end
+	end
+
+	grades_credits.each do |grade, credit|
+		puts grade.to_s + ": " + credit.to_s
+	end
+
+	respond_to do |format|
+			format.html {redirect_to semesters_add_subject_path}
+		end
+
+end
+
+
+
+
+
 #-----private------private------private------private------private------private------private------private------private------
 
 private

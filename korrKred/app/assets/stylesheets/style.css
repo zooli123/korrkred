@@ -220,7 +220,7 @@ a.back_to_home_link{
 }
 
 .new_semesters_title{
-  width: 100px;
+  width: 150px;
 }
 
 .year{
@@ -237,4 +237,10 @@ a.back_to_home_link{
 
 .subject_selection{
   width: 130px;
+}
+
+#count_index_button{
+  position: absolute;
+  top: 200px;
+  left:40%;
 }

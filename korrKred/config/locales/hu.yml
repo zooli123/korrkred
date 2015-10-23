@@ -33,6 +33,8 @@ hu:
   label_save: Mentés
   label_remove: Eltávolítás
   label_grade: Jegy
+  label_count: Korrigált kreditindex
+
 
   label_new_user: Új felhasználó vagy
   label_login_name: Felhasználónév

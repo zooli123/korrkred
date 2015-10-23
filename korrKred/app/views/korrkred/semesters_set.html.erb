@@ -9,8 +9,10 @@
   <h2 class="semesters"><%=@semester_title%></h2>
   <div class="semesters_set_div">
     <table class="semesters_set_table">
+      <%if @subjects.size != 0%>
       <th><%=t(:label_new_subject_name)%></th>
       <th><%=t(:label_grade)%></th>
+      <%end%>
       <%for subject in 0...@subjects.size do%>
         <%=form_tag(change_semester_path, method: "post") do%>
       <tr><td>
@@ -31,6 +33,9 @@
         <%end%>
       <%end%>
     </table>
+    <%=form_tag(count_index_path, method:"post") do%>
+      <%= submit_tag t(:label_count), id:"count_index_button"%>
+    <%end%>
   </div>
   <%= render partial: "paste_subject"%>
 <div id="add_new_subject_button"><%=t(:label_add_subject)%><div/>
