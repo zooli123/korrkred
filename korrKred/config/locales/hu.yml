@@ -29,6 +29,9 @@ hu:
   notice_no_subject_added: Hozzáadás sikertelen
   success_subject_added: Tantárgy hozzáadva
   notice_existing_subject: A tantárgy már hozzá lett adva
+  label_save: Mentés
+  label_remove: Eltávolítás
+  label_grade: Jegy
 
   label_new_user: Új felhasználó vagy
   label_login_name: Felhasználónév

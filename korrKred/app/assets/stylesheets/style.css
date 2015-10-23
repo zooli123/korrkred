@@ -4,14 +4,14 @@
 	overflow-y:auto;
 	width: 150px;
   position: absolute;
-  left: 500px;
+  left: 600px;
   top: 90px;
 }
 
 #add_new_semester_button, #add_new_subject_button{
   position: absolute;
   top: 20px;
-  left: 500px;
+  left: 600px;
   cursor:pointer;
   height: 20px;
 }
@@ -23,7 +23,7 @@
   display: none;
   position: absolute;
   bottom: 50px;
-  left: 500px;
+  left: 600px;
 }
 
 
@@ -38,7 +38,8 @@ input {
 
 .background_div{
 	position: absolute;
-	width: 600px;
+	width: 700px;
+  min-height: 200px;
 	left: 50%;
 	margin-right: -340px;
 	margin-left: -340px;
@@ -51,7 +52,7 @@ input {
 	box-shadow: 20px 20px 10px #C6CCCF;
 }
 
-.sign_up_div, .login_div, .semesters_div, .subjects_div{
+.sign_up_div, .login_div, .semesters_div, .subjects_div, .semesters_set_div{
 	position: relative;
 	background: transparent;
 	width: 400px;
@@ -59,6 +60,18 @@ input {
 	margin-right: -200px;
 	margin-left: -200px;
 }
+
+.semesters_set_div{
+  left: 40%;
+}
+ .form_element_in_table{
+  margin: 0;
+  padding: 0;
+ }
+
+ #grade_selection{
+  margin-left: 10px;
+ }
 
 .sign_up_table_div, .login_table_div, .semesters_table_div, .subjects_table_div{
 	position: relative;
@@ -161,7 +174,7 @@ a.back_to_home_link{
   text-decoration: none;
   position:absolute;
   bottom:20px;
-  left:500px;
+  left:600px;
 }
 #success, #notice, #error{
   width: 600px;
@@ -202,4 +215,8 @@ a.back_to_home_link{
 
 .new_subject_name{
   width: 140px;
+}
+
+.subject_selection{
+  width: 100px;
 }

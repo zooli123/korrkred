@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post   'semesters/:id' => 'korrkred#add_subject_to_semester', as: "semesters_add_subject"
   post   'save_semesters' => 'korrkred#semesters_new', as: "save_semesters"
   post   'save_subject' => 'korrkred#subjects_new', as: "save_subject"
+  post   'change_semester/:id' => 'korrkred#change_semester', as: "change_semester"
   get    'application/change_locale/:locale' => 'application#change_locale', as: "change_locale"
   get    'login'   => 'sessions#new', as: "login"
   post   'login'   => 'sessions#create'

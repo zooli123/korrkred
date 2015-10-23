@@ -7,16 +7,30 @@
 <div class="background_div">
   <%=link_to t(:label_back_to_semesters), semesters_path, class: "back_to_home_link"%>
   <h2 class="semesters"><%=@semester_title%></h2>
-    <div class="semesters_div">
-      <div class="semesters_table_div">
-        <%for subject in 0...@subjects.size do%>
-          <%=@subjects[subject].name%>: 
-          <%=@grade[subject]%>
-        </br>
+  <div class="semesters_set_div">
+    <table class="semesters_set_table">
+      <%for subject in 0...@subjects.size do%>
+        <%=form_tag(change_semester_path, method: "post") do%>
+      <tr><td>
+        <%=hidden_field_tag 'subject_id', @subjects[subject].id%>
+        <%=@subjects[subject].name%>
+        </td><td>
+          <select id="grade_selection" class="form_element_in_table" name="grade">
+            <%for i in 1..5%>
+              <option value="<%=i%>" <%if @grade[subject] == i%> selected="selected" <%end%>><%=i%></option>
+            <%end%>
+          </select>
+        </td>
+        <td>
+          <%= submit_tag t(:label_save), :name => 'change_grade', id:"change_grade_button", class: "form_element_in_table"%>
+          <%= submit_tag t(:label_remove), :name => 'delete_subject_from_semester', class: "form_element_in_table"%>
+        </td>
+      </tr>
         <%end%>
-      </div>
-    </div>
-      <%= render partial: "paste_subject"%>
-    <div id="add_new_subject_button"><%=t(:label_add_new_subject)%><div/>
+      <%end%>
+    </table>
   </div>
+  <%= render partial: "paste_subject"%>
+<div id="add_new_subject_button"><%=t(:label_add_subject)%><div/>
+</div>
 

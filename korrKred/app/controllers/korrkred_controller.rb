@@ -187,6 +187,23 @@ class KorrkredController < ApplicationController
 		end
 	end
 
+	def change_semester
+		actual_semester = Semester.find(params[:id])
+		actual_subject = Subject.find(params[:subject_id])
+		grade = params[:grade]
+		semester_subject = SemestersSubjects.where(:semester_id => actual_semester, :subject_id => actual_subject)[0]
+
+		if params[:change_grade]
+			semester_subject.update(grade: grade)
+
+		elsif params[:delete_subject_from_semester]
+			semester_subject.delete
+		end
+
+		respond_to do |format|
+			format.html {redirect_to semesters_add_subject_path}
+		end
+	end
 
 #-----private------private------private------private------private------private------private------private------private------
 

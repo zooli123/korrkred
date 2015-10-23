@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20151020140803) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "semesters_subjects", id: false, force: :cascade do |t|
+  create_table "semesters_subjects", force: :cascade do |t|
     t.integer  "grade",       limit: 4
     t.integer  "semester_id", limit: 4
     t.integer  "subject_id",  limit: 4

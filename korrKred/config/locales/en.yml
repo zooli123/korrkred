@@ -29,6 +29,9 @@ en:
   notice_no_subject_added: No subject added
   success_subject_added: Subject added
   notice_existing_subject: Subject already added
+  label_save: Save
+  label_remove: Remove
+  label_grade: Grade
 
   label_new_user: New user
   label_login_name: Username
