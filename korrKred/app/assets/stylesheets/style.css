@@ -55,14 +55,16 @@ input {
 .sign_up_div, .login_div, .semesters_div, .subjects_div, .semesters_set_div{
 	position: relative;
 	background: transparent;
-	width: 400px;
-	left: 50%;
+	width: 500px;
+	left: 30%;
 	margin-right: -200px;
 	margin-left: -200px;
 }
 
 .semesters_set_div, .subjects_div{
-  left: 40%;
+  left: 30%;
+  max-height: 300px;
+  overflow-y: auto;
 }
  .form_element_in_table{
   margin: 0;
@@ -83,7 +85,7 @@ input {
   overflow-y: auto;
 }
 .subjects_table_div{
-  width: 400px;
+  width: 500px;
   height: 216px;
   overflow-y: auto;
 }
@@ -100,7 +102,13 @@ td.subject_name{
   text-align: left;
   padding-bottom: 10px;
 }
+#existing_subjects_table{
+  width: 470px;
+}
 
+#existing_subjects_table .subject_name{
+  width: 250px;
+}
 ul{
   padding: 0px;
   margin: 0px;
@@ -241,6 +249,13 @@ a.back_to_home_link{
 
 #count_index_button{
   position: absolute;
-  top: 200px;
-  left:40%;
+  bottom: -5px;
+  left:50px;
+}
+
+.credit_index{
+  position: absolute;
+  left: 50%
+  margin-right: 25%;
+  margin-left: 25%;
 }
