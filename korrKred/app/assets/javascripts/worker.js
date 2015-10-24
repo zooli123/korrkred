@@ -9,4 +9,12 @@ $(document).ready(function(){
     $("#save_subject_button").css("display", "initial");
     $("#add_subject_button").css("display", "initial");
   })
+
+  $("input[name=delete_subject]").on("click", function(e){
+    var confirmation = confirm(gon.are_you_sure);
+    if (confirmation == true) {
+    } else {
+      e.preventDefault();
+    }
+  })
 })

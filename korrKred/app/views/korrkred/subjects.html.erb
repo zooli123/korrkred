@@ -24,7 +24,7 @@
               </select>
               </td>
               <td><%= submit_tag t(:label_save), :name =>"change_credit", class: "form_element_in_table"%></td>
-              <td><%= submit_tag t(:label_delete), :name =>"delete_subject", class: "form_element_in_table"%></td>
+              <td><%= submit_tag t(:label_delete), data: {confirm: t(:label_are_you_sure)}, :name =>"delete_subject", class: "form_element_in_table"%></td>
               <%=hidden_field_tag 'subject_id', subject.id%>
             <%end%>
           </tr>

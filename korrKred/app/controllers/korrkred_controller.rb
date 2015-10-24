@@ -20,6 +20,7 @@ class KorrkredController < ApplicationController
 	def subjects
 		@current_user = current_user
 		@subjects = @current_user.subject.order(:name)
+		gon.are_you_sure = t(:label_are_you_sure)
 	end
 
 	def subjects_new
@@ -237,35 +238,36 @@ def count_index
 	# a grades_credits jegyenként tárolja a krediteket
 	grades_credits = Hash.new
 	s = SemestersSubjects.where(:semester_id => params[:id])
-	for element in s
-		credit = Subject.where(:id => element.subject_id)[0]
-		credit = credit.credit
-		if grades_credits[element.grade]
-			grades_credits[element.grade] += credit
-		else
-			grades_credits.store(element.grade, credit)
+	if !s.empty?
+		for element in s
+			credit = Subject.where(:id => element.subject_id)[0]
+			credit = credit.credit
+			if grades_credits[element.grade]
+				grades_credits[element.grade] += credit
+			else
+				grades_credits.store(element.grade, credit)
+			end
 		end
+
+		sum = 0
+		withdrawn_credits = 0
+		accomplished_credits = 0
+
+		grades_credits.each do |grade, credit|
+			if credit.to_i != 0 && grade.to_i != 1
+				sum += credit.to_i * grade.to_i
+			end
+			if grade.to_i != 1
+				accomplished_credits += credit.to_i
+			end
+			withdrawn_credits += credit.to_i
+		end
+
+		credit_index = (sum.to_f / 30)
+		k_credit_index = credit_index * (accomplished_credits.to_f / withdrawn_credits.to_f)
+		actual_semester = Semester.find(params[:id])
+		actual_semester.update(credit_index: k_credit_index.round(2))
 	end
-
-	sum = 0
-	withdrawn_credits = 0
-	accomplished_credits = 0
-
-	grades_credits.each do |grade, credit|
-		if credit.to_i != 0 && grade.to_i != 1
-			sum += credit.to_i * grade.to_i
-		end
-		if grade.to_i != 1
-			accomplished_credits += credit.to_i
-		end
-		withdrawn_credits += credit.to_i
-	end
-
-	credit_index = (sum.to_f / 30)
-	k_credit_index = credit_index * (accomplished_credits.to_f / withdrawn_credits.to_f)
-	actual_semester = Semester.find(params[:id])
-	actual_semester.update(credit_index: k_credit_index.round(2))
-
 	respond_to do |format|
 			format.html {redirect_to semesters_add_subject_path}
 		end

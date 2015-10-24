@@ -26,7 +26,7 @@
               <%=form_tag(delete_semester_path, method:"post", class: "form_next_to_li") do%>
               <%= link_to semester.title, "/semesters/"+ semester.id.to_s, class: "existing_semesters" %>
                 <%=hidden_field_tag 'semester_id', semester.id%>
-                <%= submit_tag t(:label_delete), class: "form_element_in_table delete_semester"%>
+                <%= submit_tag t(:label_delete),  data: { confirm: t(:label_are_you_sure) },  class: "form_element_in_table delete_semester"%>
               <%end%>
             </li>
           <%end%>
