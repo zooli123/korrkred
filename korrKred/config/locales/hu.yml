@@ -35,7 +35,8 @@ hu:
   label_remove: Eltávolítás
   label_grade: Jegy
   label_count: Korrigált kreditindex
-
+  label_withdrawn: Összes kredit
+  label_accomplished: Teljesített kredit
 
   label_new_user: Új felhasználó vagy
   label_login_name: Felhasználónév

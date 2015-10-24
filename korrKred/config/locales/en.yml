@@ -35,6 +35,8 @@ en:
   label_remove: Remove
   label_grade: Grade
   label_count: Count credit index
+  label_withdrawn: Withdrawn credits
+  label_accomplished: Accomplished credits
 
   label_new_user: New user
   label_login_name: Username

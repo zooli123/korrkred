@@ -75,7 +75,6 @@ class KorrkredController < ApplicationController
 	def semesters
 		@current_user = current_user
 		@semesters = @current_user.semester.order(:year).order(:half_year)
-		# gon.semesters = @semesters
 	end
 
 
@@ -89,8 +88,8 @@ class KorrkredController < ApplicationController
 			semester_half_year = params[:semester][:half_year]
 			semester_title = params[:semester][:title]
 			year = Time.now.year
-			year_min = year - 1
-			year_max = year + 2
+			year_min = year - 10
+			year_max = year + 10
 
 			if semester_year != "" && semester_half_year != "" && semester_year.to_i >= year_min &&
 				semester_year.to_i <= year_max && [1,2].include?(semester_half_year.to_i)
@@ -146,6 +145,7 @@ class KorrkredController < ApplicationController
 
 	def semesters_set
 		@current_user = current_user
+		actual_index_counting
 		semester = @current_user.semester.where("id= :id",{id: "#{params[:id]}"})
 		if semester.empty?
 			respond_to do |format|
@@ -182,7 +182,7 @@ class KorrkredController < ApplicationController
 		if !params[:subject_id] || !params[:grade]
 			respond_to do |format|
 				flash[:notice] = t(:notice_no_subject_added)
-				format.html {redirect_to semesters_add_subject_path}
+				format.html {redirect_to semesters_set_path}
 			end
 		else
 			subject = params[:subject_id]
@@ -196,17 +196,19 @@ class KorrkredController < ApplicationController
 
 			existings = SemestersSubjects.where("subject_id= :subject_id and semester_id= :semester_id",
 																					{subject_id: "#{subject}", semester_id: "#{semester}"})
+			actual_index_counting
 			if existings.empty?
 				semester_subject.save
+				actual_index_counting
 
 				respond_to do |format|
 					flash[:success] = t(:success_subject_added)
-					format.html {redirect_to semesters_add_subject_path}
+					format.html {redirect_to semesters_set_path}
 				end
 			else
 				respond_to do |format|
 					flash[:notice] = t(:notice_existing_subject)
-					format.html {redirect_to semesters_add_subject_path}
+					format.html {redirect_to semesters_set_path}
 				end
 			end
 		end
@@ -225,8 +227,10 @@ class KorrkredController < ApplicationController
 			semester_subject.delete
 		end
 
+		actual_index_counting
+
 		respond_to do |format|
-			format.html {redirect_to semesters_add_subject_path}
+			format.html {redirect_to semesters_set_path}
 		end
 	end
 
@@ -234,9 +238,10 @@ class KorrkredController < ApplicationController
 
 #-----index_counter------index_counter------index_counter------index_counter------index_counter------index_counter------
 
-def count_index
+def actual_index_counting
 	# a grades_credits jegyenként tárolja a krediteket
 	grades_credits = Hash.new
+	actual_semester = Semester.find(params[:id])
 	s = SemestersSubjects.where(:semester_id => params[:id])
 	if !s.empty?
 		for element in s
@@ -263,15 +268,20 @@ def count_index
 			withdrawn_credits += credit.to_i
 		end
 
+		# javascript-hez:
+		gon.withdrawn_credits = withdrawn_credits
+		gon.accomplished_credits = accomplished_credits
+		gon.label_withdrawn = t(:label_withdrawn)
+		gon.label_accomplished = t(:label_accomplished)
+		gon.are_you_sure = t(:label_are_you_sure)
+
 		credit_index = (sum.to_f / 30)
 		k_credit_index = credit_index * (accomplished_credits.to_f / withdrawn_credits.to_f)
 		actual_semester = Semester.find(params[:id])
 		actual_semester.update(credit_index: k_credit_index.round(2))
+	else
+		actual_semester.update(credit_index: 0.0)
 	end
-	respond_to do |format|
-			format.html {redirect_to semesters_add_subject_path}
-		end
-
 end
 
 

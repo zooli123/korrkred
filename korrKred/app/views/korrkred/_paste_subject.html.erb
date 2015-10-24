@@ -4,7 +4,7 @@
     <div class="new_subject_div">
       <div class="input_element">
         <%= select_tag(:subject_id, options_for_select(@all_subjects), class: "subject_selection" ) %>
-        <input type="number" class="grade" name="grade" min="1" max="5" placeholder="<%=t(:label_grade)%>" title="<%=t(:label_grade)%>"/>
+        <input type="number" class="grade" name="grade" min="1" max="5" value="1" placeholder="<%=t(:label_grade)%>" title="<%=t(:label_grade)%>"/>
       </div>
     </div>
   </div>

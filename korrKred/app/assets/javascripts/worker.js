@@ -11,10 +11,22 @@ $(document).ready(function(){
   })
 
   $("input[name=delete_subject]").on("click", function(e){
-    var confirmation = confirm(gon.are_you_sure);
-    if (confirmation == true) {
-    } else {
-      e.preventDefault();
-    }
+    confirmation(e);
+  })
+  $("input[name=delete_subject_from_semester]").on("click", function(e){
+    confirmation(e);
+  })
+
+  $(".credit_index").on("mouseover", function(){
+    var message = gon.label_withdrawn + ": " + gon.withdrawn_credits + "\n" + gon.label_accomplished + ": " + gon.accomplished_credits;
+    $(this).prop("title", message)
   })
 })
+
+function confirmation(e){
+  var confirmation = confirm(gon.are_you_sure);
+  if (confirmation == true) {
+  } else {
+    e.preventDefault();
+  }
+}

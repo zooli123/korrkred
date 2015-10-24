@@ -55,7 +55,7 @@ input {
 .sign_up_div, .login_div, .semesters_div, .subjects_div, .semesters_set_div{
 	position: relative;
 	background: transparent;
-	width: 500px;
+	width: 520px;
 	left: 30%;
 	margin-right: -200px;
 	margin-left: -200px;
@@ -83,7 +83,7 @@ input {
 }
 
 .semesters_table_div{
-  width: 400px;
+  width: 420px;
   height: 216px;
   overflow-y: auto;
 }

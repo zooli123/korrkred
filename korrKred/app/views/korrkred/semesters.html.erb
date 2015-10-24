@@ -9,8 +9,7 @@
   <h2 class="semesters"><%=t(:label_semesters)%></h2>
     <div class="semesters_div">
       <div class="semesters_table_div">
-        <% # year szerinti sorrend, ha egy year-ben több half_year van, egy sorba kerül, egyébként külön sorba
-        if !@semesters.empty?
+        <%if !@semesters.empty?
         year = @semesters[0] ? @semesters[0].year : 0%>
         <ul>
           <%=@semesters[0].year.to_s%>:

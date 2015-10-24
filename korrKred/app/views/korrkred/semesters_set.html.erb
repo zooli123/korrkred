@@ -6,10 +6,7 @@
 <% end %>
 <div class="background_div">
   <%=link_to t(:label_back_to_semesters), semesters_path, class: "back_to_home_link"%>
-  <h2 class="semesters"><%=@semester_title%>:<span class="credit_index"><%=@k_credit_index%></spen></h2>
-  <%=form_tag(count_index_path, method:"post") do%>
-    <%= submit_tag t(:label_count), id:"count_index_button"%>
-  <%end%>
+  <h2 class="semesters"><%=@semester_title%>:<span class="credit_index" title=""><%=@k_credit_index%></spen></h2>
   <div class="semesters_set_div">
     <table class="semesters_set_table">
       <%if @subjects.size != 0%>

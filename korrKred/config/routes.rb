@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   post   'change_subject' => 'korrkred#change_subject', as: "change_subject"
   post   'change_semester/:id' => 'korrkred#change_semester', as: "change_semester"
   post   'delete_semester' => 'korrkred#delete_semester', as: "delete_semester"
-  post   'count_index/:id' => 'korrkred#count_index', as: "count_index"
   get    'application/change_locale/:locale' => 'application#change_locale', as: "change_locale"
   get    'login'   => 'sessions#new', as: "login"
   post   'login'   => 'sessions#create'
