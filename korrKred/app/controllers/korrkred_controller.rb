@@ -281,6 +281,12 @@ def actual_index_counting
 		actual_semester.update(credit_index: k_credit_index.round(2))
 	else
 		actual_semester.update(credit_index: 0.0)
+		gon.withdrawn_credits = 0
+		gon.accomplished_credits = 0
+		gon.label_withdrawn = t(:label_withdrawn)
+		gon.label_accomplished = t(:label_accomplished)
+		gon.are_you_sure = t(:label_are_you_sure)
+
 	end
 end
 
