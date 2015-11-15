@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     if user && user.password == params[:session][:password]
       respond_to do |format|
         log_in user
+        flash[:success] = t(:label_successful_login)
         format.html { redirect_to home_path}
       end
     return
