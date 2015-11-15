@@ -26,7 +26,6 @@ class KorrkredController < ApplicationController
 	def subjects_new
 		@current_user = current_user
 		current_subject = Subject.new(subject_params)
-		puts "benne? " + (0..20).include?(current_subject.credit).to_s
 		if current_subject.name != "" && current_subject.credit != "" && (0..20).include?(current_subject.credit)
 			subjects = Subject.where("name= :name and user_id= :user_id",
 															 {name: "#{current_subject.name}", user_id: "#{@current_user.id}"})

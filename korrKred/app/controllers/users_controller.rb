@@ -6,13 +6,15 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
   end
+
   def new
   	@user = User.new
   end
+
   def show
   	@user = User.find(params[:id])
-
   end
+
   def create
     @user = User.new(user_params)
     users = User.select("login")
@@ -25,12 +27,12 @@ class UsersController < ApplicationController
         return
       end
     end
-
     if @user.save
       log_in @user
       redirect_to home_path
     end
   end
+
 	def update
 	end
 
