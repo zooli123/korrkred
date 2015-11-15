@@ -39,6 +39,7 @@ end
 
 
 subject_list = [
+  #elso
   [ "Grafitszálak", 2, 1],
   [ "Hulladékkezelés", 2, 1],
   [ "Ipargazdaságtan", 3, 1],
@@ -55,6 +56,7 @@ subject_list = [
   [ "Programozás I. e", 4, 1],
   [ "Programozás I. gy", 3, 1],
 
+  #masodik
   [ "Számvitel előadás", 3, 2],
   [ "Számvitel gyak", 2, 2],
   [ "Termelésmenedzsment előadás", 1, 2],
@@ -63,6 +65,7 @@ subject_list = [
   [ "Hulladékkezelés", 2, 2],
   [ "Ipargazdaságtan", 3, 2],
 
+  #harmadik
   [ "Ipargazdaságtan", 3, 3],
   [ "Windows Phone fejlesztés", 3, 3],
   [ "Programozás alapjai", 10, 3],
@@ -72,6 +75,7 @@ subject_list = [
   [ "Számítógép hálózatok gy", 2, 3],
   [ "Környezetvédelem és minőségügyi alapismeretek", 2, 3],
 
+  #negyedik
   [ "Mestint előadás", 3, 4],
   [ "Ipargazdaságtan", 3, 4],
   [ "Marketing", 3, 4],
@@ -85,3 +89,38 @@ subject_list.each do |name, credit, user_id|
   Subject.create( name: name, credit: credit, user_id: user_id )
 end
 
+semeseters_subject_list = [
+  #elso
+  [2,1,1],
+  [5,1,2],
+  [3,1,3],
+  [1,1,4],
+  [4,1,5],
+  [4,1,6],
+  [2,1,7],
+  [5,1,8],
+  [5,1,9],
+  [3,1,10],
+
+  [5,2,11],
+  [1,2,12],
+  [5,2,13],
+  [5,2,14],
+  [1,2,15],
+  [3,1,4],
+
+  #masodik
+  [5,3,16],
+  [1,3,17],
+  [5,3,18],
+  [4,3,19],
+  [4,3,20],
+  [1,3,21],
+  [1,3,22],
+
+  [2,4,17],
+]
+
+semeseters_subject_list.each do |grade, semester_id, subject_id|
+  SemestersSubjects.create(grade: grade, semester_id: semester_id, subject_id: subject_id)
+end

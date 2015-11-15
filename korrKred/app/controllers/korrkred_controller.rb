@@ -165,8 +165,14 @@ class KorrkredController < ApplicationController
 				id = s.id
 				@all_subjects.store(name, id)
 			end
-			@all_subjects = @all_subjects.sort_by {|name, id| name.downcase}
 			@subjects = semester.subject.sort_by {|subject| subject.name.downcase}
+			# delete already added subject from selection list:
+			@subjects.each do |subject|
+				@all_subjects.delete(subject.name)
+			end
+			@all_subjects = @all_subjects.sort_by {|name, id| name.downcase}
+
+
 			@grade = Array.new
 			for s in @subjects
 				x = SemestersSubjects.where("subject_id= :subject_id and semester_id= :semester_id",

@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+  <div id="notice_at_signup"><%= flash[:notice] %></div>
+<% end %>
 <div class="background_div">
 <h2 class="signup"><%=t(:label_signup)%></h2>
   <div class="sign_up_div">
