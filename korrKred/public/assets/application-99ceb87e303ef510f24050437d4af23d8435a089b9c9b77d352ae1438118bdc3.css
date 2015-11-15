@@ -1,0 +1,296 @@
+
+#new_semester, #new_subject{
+	max-height: 216px;
+	overflow-y:auto;
+	width: 200px;
+  position: absolute;
+  left: 580px;
+  top: 90px;
+}
+
+#add_new_semester_button, #add_new_subject_button{
+  position: absolute;
+  top: 20px;
+  left: 580px;
+  cursor:pointer;
+  height: 20px;
+}
+#add_new_semester_button:hover, #add_new_subject_button:hover{
+  color: grey;
+}
+
+#save_semester_button, #save_subject_button, #add_subject_button{
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  left: 580px;
+}
+
+
+input, textarea, select{
+  border: 1px solid #bbb;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+.background_div{
+	position: absolute;
+	width: 700px;
+  min-height: 200px;
+	left: 50%;
+	margin-right: -390px;
+	margin-left: -390px;
+	margin-top: 100px;
+	padding: 40px;
+	padding-top: 100px;
+	background-size: 600px 600px;
+	background: #CAD9DE;
+	border-radius: 40px;
+	box-shadow: 20px 20px 10px #C6CCCF;
+}
+
+.sign_up_div, .login_div, .semesters_div, .subjects_div, .semesters_set_div{
+	position: relative;
+	background: transparent;
+	width: 520px;
+	left: 30%;
+	margin-right: -200px;
+	margin-left: -200px;
+}
+.login_div, .sign_up_div{
+  left: 43%;
+}
+
+.semesters_set_div, .subjects_div{
+  left: 30%;
+  max-height: 300px;
+  overflow-y: auto;
+}
+ .form_element_in_table{
+  margin: 0;
+  padding: 0;
+ }
+
+ #grade_selection{
+  margin-left: 10px;
+ }
+
+.sign_up_table_div, .login_table_div, .semesters_table_div, .subjects_table_div, .sign_up_table_div{
+	position: relative;
+}
+
+.semesters_table_div{
+  width: 420px;
+  height: 216px;
+  overflow-y: auto;
+}
+.subjects_table_div{
+  width: 500px;
+  height: 216px;
+  overflow-y: auto;
+}
+
+#existing_subjects_table td{
+  padding-right: 10px;
+}
+
+td.subject_name{
+  width: 200px;
+}
+
+#existing_subjects_table th, .semesters_set_table th{
+  text-align: left;
+  padding-bottom: 10px;
+}
+#existing_subjects_table{
+  width: 470px;
+}
+
+#existing_subjects_table .subject_name{
+  width: 250px;
+}
+ul{
+  padding: 0px;
+  margin: 0px;
+}
+
+li{
+  margin-left: 40px;
+  padding: 0px;
+}
+li:first-child{
+  margin-top: 0px;
+}
+
+.input_field{
+	width: 100%;
+}
+
+h1{
+	background:  #CAD9DE;
+	text-align: center;
+	padding: 50px;
+	margin: -20px;
+}
+
+h2.signup, h2.login, h2.semesters, h2.subjects{
+	position:absolute;
+	top:20px;
+}
+
+.language_selection{
+	position: relative;
+	top: -90px;
+  margin-right: 50px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.language_selection a:link, .language_selection a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.language_selection a:hover, .language_selection a:active {
+  text-decoration: none;
+  color: grey;
+}
+
+a:link, a:visited {
+  text-decoration: underline;
+  color: black;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+  color: grey;
+}
+
+.links a:link, .links a:visited {
+  margin: 10px;
+  background:  #CAD9DE;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #C6CCCF;
+  padding:10px;
+  text-decoration: none;
+  color: black;
+}
+
+.links a:hover, .links a:active {
+  margin: 10px;
+  background:  #CAD9DE;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px #C6CCCF;
+  padding:10px;
+  text-decoration: none;
+  color: black;
+}
+
+.logout_div{
+  position: relative;
+  text-align: right;
+  margin-right: 50px;
+  top: -60px;
+}
+.links{
+  text-align: center;
+}
+
+a.back_to_home_link{
+  text-decoration: none;
+  position:absolute;
+  bottom:20px;
+  left:580px;
+}
+#success, #notice, #error, #error_at_login, #notice_at_signup{
+  width: 600px;
+  position: absolute;
+  left: 50%;
+  top: 230px;
+  text-align: center;
+  margin-right: -300px;
+  margin-left: -300px;
+}
+
+#error_at_login{
+  position: absolute;
+  left: 50%;
+  top: 150px;
+}
+
+#notice_at_signup{
+  position: absolute;
+  left: 50%;
+  top: 150px;
+}
+
+
+#success{
+  color:green;
+}
+#notice, #notice_at_signup{
+  color: orange;
+}
+#error, #error_at_login{
+  color: red;
+}
+
+.new_semester_div, .new_subject_div, .paste_subject_div{
+  display: none;
+}
+
+.new_semesters_title{
+  width: 150px;
+}
+
+.year{
+  width: 60px;
+}
+
+.half_year, .credit, .grade{
+  width: 30px;
+}
+
+.new_subject_name{
+  width: 140px;
+}
+
+.subject_selection{
+  width: 130px;
+}
+
+#count_index_button{
+  position: absolute;
+  bottom: -5px;
+  left:50px;
+}
+
+.credit_index{
+  position: absolute;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.delete_semester{
+  position: absolute;
+  right: 20px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
