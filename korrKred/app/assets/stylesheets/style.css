@@ -60,7 +60,7 @@ input {
 	margin-right: -200px;
 	margin-left: -200px;
 }
-.login_div{
+.login_div, .sign_up_div{
   left: 43%;
 }
 
@@ -78,7 +78,7 @@ input {
   margin-left: 10px;
  }
 
-.sign_up_table_div, .login_table_div, .semesters_table_div, .subjects_table_div{
+.sign_up_table_div, .login_table_div, .semesters_table_div, .subjects_table_div, .sign_up_table_div{
 	position: relative;
 }
 
@@ -205,7 +205,7 @@ a.back_to_home_link{
   bottom:20px;
   left:580px;
 }
-#success, #notice, #error, #error_at_login{
+#success, #notice, #error, #error_at_login, #notice_at_signup{
   width: 600px;
   position: absolute;
   left: 50%;
@@ -221,11 +221,17 @@ a.back_to_home_link{
   top: 150px;
 }
 
+#notice_at_signup{
+  position: absolute;
+  left: 50%;
+  top: 150px;
+}
+
 
 #success{
   color:green;
 }
-#notice{
+#notice, #notice_at_signup{
   color: orange;
 }
 #error, #error_at_login{

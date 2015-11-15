@@ -53,6 +53,7 @@ en:
   label_logout: Log out
   label_successful_login: Successfully logged in!
   label_logged_in_as: Logged in as
+  label_back_to_login: Back to login page
   error_login_or_password_incorrect: Login name or password incorrect!
   error_not_logged_in: Please log in first!
 

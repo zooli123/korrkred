@@ -53,5 +53,6 @@ hu:
   label_logout: Kijelentkezés
   label_successful_login: Sikeres bejelentkezés!
   label_logged_in_as: Bejelentkezve mint
+  label_back_to_login: Vissza a bejelentkezéshez
   error_login_or_password_incorrect: Érvénytelen felhasználónév vagy jelszó!
   error_not_logged_in: Kérem jelentkezzen be!
