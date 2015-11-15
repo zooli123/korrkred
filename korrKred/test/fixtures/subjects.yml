@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  grade: 1
-  credit: 1
+  name: tantargy1
+  credit: 2
+  user_id: 298486374
 
 two:
-  name: MyString
-  grade: 1
-  credit: 1
+  name: tantargy2
+  credit: 5
+  user_id: 980190962

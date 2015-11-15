@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  year: 1
+  title: first
+  year: 2015
   half_year: 1
+  user_id: 980190962
 
 two:
-  year: 1
-  half_year: 1
+  title: second
+  year: 2015
+  half_year: 2
+  user_id: 980190962
