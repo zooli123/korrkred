@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
 
   def new
+    if logged_in?
+      respond_to do |format|
+        format.html {redirect_to home_path}
+      end
+    end
   end
   # create session, login, if user and password matches, error message, if not
   def create

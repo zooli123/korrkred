@@ -48,6 +48,7 @@ en:
   label_signup_now: Sign up now
   notice_login_occupied: Login name already in use!
   notice_successfully_registered: Registration successful!
+  error_all_fields_must_be_filled: All field must be filled!
 
   label_login: Log in
   label_logout: Log out

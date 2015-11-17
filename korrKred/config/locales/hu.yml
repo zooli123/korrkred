@@ -48,6 +48,7 @@ hu:
   label_signup_now: Regisztrálj most
   notice_login_occupied: A felhasználónév már foglalt!
   notice_successfully_registered: Sikeres regisztráció!
+  error_all_fields_must_be_filled: Minden mező kitöltése kötelező!
 
   label_login: Bejelentkezés
   label_logout: Kijelentkezés

@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
+    if logged_in?
+      respond_to do |format|
+        format.html {redirect_to home_path}
+      end
+    end
   end
 
   def show
@@ -30,6 +35,9 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       redirect_to home_path
+    else
+      flash[:error] = t(:error_all_fields_must_be_filled)
+      redirect_to signup_path
     end
   end
 
