@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   end
   # create session, login, if user and password matches, error message, if not
   def create
-    user = User.find_by(login: params[:session][:login].downcase)
+    user = User.find_by(login: params[:session][:login])
     if user && user.password == params[:session][:password]
       respond_to do |format|
         log_in user
