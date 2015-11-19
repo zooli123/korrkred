@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
 
   def change_locale
      I18n.locale = params[:locale].to_sym
-	   I18n.default_locale = params[:locale].to_sym
 	   redirect_to params[:site]
 	end
 

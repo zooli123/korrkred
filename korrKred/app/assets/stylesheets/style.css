@@ -131,6 +131,13 @@ h2.semesters, h2.subjects{
 .language_selection{
   font-weight: bold;
 }
+.language_selection.not_logged{
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  text-align: right;
+
+}
 .logout_div{
   position: relative;
   text-align: right;
