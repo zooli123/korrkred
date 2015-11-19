@@ -3,7 +3,14 @@
   margin-left: 20px;
 }
 
-.btn{
+.btn.controller{
+  margin-left: 100px;
+  position:absolute;
+  top:240px;
+  left:0;
+}
+
+.btn.not_logged{
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -12,10 +19,24 @@ html, body{
   padding:0;
   margin-top: 0px;
 }
+body{
+  padding-bottom: 100px;
+  background: black;
+}
+
+.alert{
+  margin-top: 50px;
+}
 
 .content{
-  margin-left: 20%;
+  margin-top: 70px;
+  margin-left: 30%;
   margin-right: 40px;
+}
+
+.container{
+  margin-right: 50%;
+  margin-left: 50%;
 }
 
 ul li{
@@ -23,9 +44,11 @@ ul li{
 }
 
 #new_semester, #new_subject{
+  position: absolute;
+  top:260px;
+  left:0;
   width: 250px;
-}
-#new_semester{
+  margin-left: 100px;
   margin-top: 20px;
 }
 
@@ -50,7 +73,6 @@ ul li{
 .semesters_div, .subjects_div, .semesters_set_div{
 	position: relative;
 	background: transparent;
-  max-height: 550px;
   overflow-y: auto;
 	width: 60%;
 }
@@ -69,7 +91,6 @@ ul li{
 }
 
 .semesters_set_div, .subjects_div{
-  max-height: 550px;
   overflow-y: auto;
   margin-bottom: 30px;
 }
@@ -85,8 +106,22 @@ ul li{
 }
 
 h1{
-	text-align: center;
+  text-align: center;
   font-variant: small-caps;
+}
+
+.h{
+  position: absolute;
+  top: -10px;
+  width: 100%;
+}
+
+#welcome{
+  position: relative;
+  top: 230px;
+  text-align: center;
+  vertical-align: center;
+  margin-left: -40%;
 }
 
 h2.semesters, h2.subjects{
@@ -94,10 +129,6 @@ h2.semesters, h2.subjects{
 }
 
 .language_selection{
-	position: relative;
-	top: -60px;
-  margin-right: 50px;
-  text-align: right;
   font-weight: bold;
 }
 .logout_div{
@@ -109,12 +140,13 @@ h2.semesters, h2.subjects{
 .new_semester_div, .new_subject_div, .paste_subject_div{
   display: none;
 }
+
 .half_year, .credit, .grade{
-  width: 50px;
+  width: 60px;
 }
 .credit_index{
   position: absolute;
-  left: 40%;
+  left: 50%;
 }
 
 .delete_semester{

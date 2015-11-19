@@ -1,4 +1,5 @@
 <%=form_tag(save_semesters_path, method: "post") do%>
+<input type="submit" id="save_semester_button" class="controller btn btn-primary" value="<%=t(:label_save_semester)%>"/>
 <div id="new_semester">
   <div class="new_semester_div">
     <div class="new_semester_table_div">
@@ -12,5 +13,4 @@
     </div>
   </div>
 </div>
-<input type="submit" id="save_semester_button" class="btn btn-primary" value="<%=t(:label_save_semester)%>"/>
 <%end%>

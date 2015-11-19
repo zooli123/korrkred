@@ -28,32 +28,45 @@ end
 <% if flash[:error] %>
   <div id="error" class="alert alert-danger"><%= flash[:error] %></div>
 <% end %>
-  <h1 >
-    <%=t(:label_title)%>
-  </h1>
-  <div class="language_selection">[
-    <%if I18n.locale.to_s == "en"%>
-      <%=link_to t(:label_hungarian), change_locale_path(:locale => "hu", :site => request.path)%>
-    <%else%>
-      <%=link_to t(:label_english), change_locale_path(:locale => "en", :site => request.path)%>
-    <%end%>
-  ]</div>
-
+<% if !logged_in?%>
+  <div class="h"><h1><%=t(:label_title)%></h1></div>
+<%end%>
 <%if logged_in?%>
-  <div class="logout_div">
-    <%=t(:label_logged_in_as) + ": " + name%>
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home"> <%=t(:label_title)%></a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li id="nav_button_subjects"><%=link_to t(:label_subjects), subjects_path%></li>
+        <li id="nav_button_semesters"><%=link_to t(:label_semesters), semesters_path%></li>
+        <li id="nav_logout"><%= link_to t(:label_logout), logout_path%></li>
+        <li class="language_selection">
+          <%if I18n.locale.to_s == "en"%>
+            <%=link_to t(:label_hungarian), change_locale_path(:locale => "hu", :site => request.path)%>
+          <%else%>
+            <%=link_to t(:label_english), change_locale_path(:locale => "en", :site => request.path)%>
+          <%end%>
+        </li>
+      </ul>
+    </div>
   </div>
+</nav>
 
-  <ul class="nav nav-tabs">
-    <li id="nav_button_subjects"><%=link_to t(:label_subjects), subjects_path%></li>
-    <li id="nav_button_semesters"><%=link_to t(:label_semesters), semesters_path%></li>
-    <li id="nav_logout"><%= link_to t(:label_logout), logout_path%></li>
 
-  </ul>
   
 <%end%>
 <div class="content">
   <%= yield %>
-<div>
+</div>
+<div class="footer navbar-nav navbar-default navbar-fixed-bottom">
+  <div class="navbar-text">
+    <%if logged_in?%>
+    <%=t(:label_logged_in_as) + ": " + name%>
+    <%end%>
+  </div>
+</div>
 </body>
+
 </html
