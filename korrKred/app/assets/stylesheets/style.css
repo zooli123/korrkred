@@ -185,7 +185,8 @@ h2.semesters{
   position: absolute;
   width: 100%;
   min-width: 920px;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   overflow-y: auto;
   overflow-x: auto;
 }
