@@ -181,6 +181,7 @@ h2.semesters{
 
 
 .page-content{
+  z-index: -4;
   position: absolute;
   width: 100%;
   min-width: 920px;
