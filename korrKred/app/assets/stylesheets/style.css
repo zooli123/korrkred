@@ -110,6 +110,10 @@ h1{
   font-variant: small-caps;
 }
 
+.navbar-brand{
+  font-variant: small-caps;
+}
+
 .h{
   position: absolute;
   top: -10px;
