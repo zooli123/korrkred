@@ -1,13 +1,9 @@
 <%=form_tag(save_subject_path, method: "post") do%>
 <div id="new_subject">
-  <div class="new_subject_div">
-    <div class="new_subject_table_div">
-      <div class="input_element form-inline">
-        <input type="text" class="new_subject_name form-control" name="subject[name]" title="<%=t(:label_new_subject_name)%>" placeholder="<%=t(:label_new_subject_name)%>"/>
+  <div class="input_element form-group">
+    <input type="text" class="form-control" name="subject[name]" title="<%=t(:label_new_subject_name)%>" placeholder="<%=t(:label_new_subject_name)%>"/>
 
-        <input type="number" class="credit form-control" min="0" max="20" name="subject[credit]" title="<%=t(:label_credit)%>" placeholder="<%=t(:label_credit)%>"/>
-      </div>
-    </div>
+    <input type="number" class="credit form-control" min="0" max="20" name="subject[credit]" title="<%=t(:label_credit)%>" placeholder="<%=t(:label_credit)%>"/>
   </div>
 </div>
 <input type="submit" id="save_subject_button" class="controller btn btn-primary" value="<%=t(:label_save_subject)%>"/>

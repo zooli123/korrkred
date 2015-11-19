@@ -1,16 +1,12 @@
 <%=form_tag(save_semesters_path, method: "post") do%>
 <input type="submit" id="save_semester_button" class="controller btn btn-primary" value="<%=t(:label_save_semester)%>"/>
 <div id="new_semester">
-  <div class="new_semester_div">
-    <div class="new_semester_table_div">
       <div class="input_element form-group">
         <input type="text" class="new_semesters_title form-control" name="semester[title]" title="<%=t(:label_new_semester_title)%>" placeholder="<%=t(:label_new_semester_title)%>"/>
         <div class="form-inline">
           <input type="number" class="year form-control" min="<%=Time.now.year - 10%>" max="<%=Time.now.year + 10%>" value="<%=Time.now.year%>" name="semester[year]" title="<%=t(:label_year)%>" placeholder="<%=t(:label_year)%>"/>
           <input type="number" class="half_year form-control" min="1" max="2" name="semester[half_year]" title="<%=t(:label_half_year)%>" placeholder="<%=t(:label_half_year)%>"/>
         </div>
-      </div>
-    </div>
   </div>
 </div>
 <%end%>

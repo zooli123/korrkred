@@ -1,30 +1,24 @@
-  <div class="background_div">
-  <h2 class="semesters"><%=t(:label_semesters)%></h2>
-    <div class="semesters_div">
-      <div class="semesters_table_div">
-        <%if !@semesters.empty?
-        year = @semesters[0] ? @semesters[0].year : 0%>
-        <ul class="list-group">
-          <h3><%=@semesters[0].year.to_s%>:</h3>
-          <%for semester in @semesters%>
-            <%if semester.year != year%>
-              <h3><%=semester.year.to_s%>:</h3>
-            <%end
-            year = semester.year
-            %>
-            <li class="list-group-item">
-              <%=form_tag(delete_semester_path, method:"post", class: "form_next_to_li") do%>
-              <%= link_to semester.title, "/semesters/"+ semester.id.to_s, class: "existing_semesters" %>
-                <%=hidden_field_tag 'semester_id', semester.id%>
-                <%= submit_tag t(:label_delete),  data: { confirm: t(:label_are_you_sure) },  class: "delete_semester"%>
-              <%end%>
-            </li>
-          <%end%>
-        </ul>
+<div class="semesters_div">
+  <%if !@semesters.empty?
+  year = @semesters[0] ? @semesters[0].year : 0%>
+  <ul class="list-group">
+    <h3><%=@semesters[0].year.to_s%>:</h3>
+    <%for semester in @semesters%>
+      <%if semester.year != year%>
+        <h3><%=semester.year.to_s%>:</h3>
+      <%end
+      year = semester.year
+      %>
+      <li class="list-group-item">
+        <%=form_tag(delete_semester_path, method:"post", class: "form_next_to_li") do%>
+        <%= link_to semester.title, "/semesters/"+ semester.id.to_s, class: "existing_semesters" %>
+          <%=hidden_field_tag 'semester_id', semester.id%>
+          <%= submit_tag t(:label_delete),  data: { confirm: t(:label_are_you_sure) },  class: "delete_semester"%>
         <%end%>
-      </div>
-    </div>
-    <%= render partial: "new_semester"%>
-    <div id="add_new_semester_button" class="controller btn btn-primary"><%=t(:label_add_new_semester)%></div>
-
-  </div>
+      </li>
+    <%end%>
+  </ul>
+  <%end%>
+</div>
+<%= render partial: "new_semester"%>
+<%= render partial: "sidebar"%>

@@ -2,7 +2,7 @@
 <div id="new_subject">
   <div class="paste_subject_div">
     <div class="new_subject_div">
-      <div class="input_element form-inline">
+      <div class="input_element form-group">
         <%= select_tag(:subject_id, options_for_select(@all_subjects), class: "subject_selection form-control" ) %>
         <input type="number" class="grade form-control" name="grade" min="1" max="5" value="1" placeholder="<%=t(:label_grade)%>" title="<%=t(:label_grade)%>"/>
       </div>

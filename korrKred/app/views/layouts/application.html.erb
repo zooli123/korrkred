@@ -44,20 +44,36 @@ end
   <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/home"> <%=t(:label_title)%></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/home"><%=t(:label_title)%></a>
     </div>
-    <div>
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li id="nav_button_subjects"><%=link_to t(:label_subjects), subjects_path%></li>
         <li id="nav_button_semesters"><%=link_to t(:label_semesters), semesters_path%></li>
-        <li id="nav_logout"><%= link_to t(:label_logout), logout_path%></li>
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
         <li class="language_selection">
           <%if I18n.locale.to_s == "en"%>
-            <%=link_to t(:label_hungarian), change_locale_path(:locale => "hu", :site => request.path)%>
+            <%=link_to change_locale_path(:locale => "hu", :site => request.path) do%>
+            <span class="glyphicon glyphicon-flag"></span> <%=t(:label_hungarian)%>
+            <% end %>
           <%else%>
-            <%=link_to t(:label_english), change_locale_path(:locale => "en", :site => request.path)%>
+            <%=link_to change_locale_path(:locale => "en", :site => request.path) do%>
+              <span class="glyphicon glyphicon-flag"></span> <%=t(:label_english)%>
+            <%end%>
           <%end%>
         </li>
+        <li id="nav_logout">
+          <%= link_to logout_path do%>
+            <span class="glyphicon glyphicon-log-out"></span> <%= t(:label_logout)%>
+          <%end%>
+        </li>
+
       </ul>
     </div>
   </div>
@@ -66,12 +82,13 @@ end
 
   
 <%end%>
-<div class="content">
+<div class="page-content">
   <%= yield %>
 </div>
 <div class="footer navbar-nav navbar-default navbar-fixed-bottom">
   <div class="navbar-text">
     <%if logged_in?%>
+    <span class="glyphicon glyphicon-user"></span> 
     <%=t(:label_logged_in_as) + ": " + name%>
     <%end%>
   </div>
