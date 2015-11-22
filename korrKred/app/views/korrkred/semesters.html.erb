@@ -9,16 +9,17 @@
       <%end
       year = semester.year
       %>
-      <li class="list-group-item">
+      <li class="list-group">
         <%=form_tag(delete_semester_path, method:"post", class: "form_next_to_li") do%>
-        <%= link_to semester.title, "/semesters/"+ semester.id.to_s, class: "existing_semesters" %>
+          <%= link_to semester.title, "/semesters/"+ semester.id.to_s, class: "existing_semesters btn btn-default semester-year-button", title: semester.title %>
           <%=hidden_field_tag 'semester_id', semester.id%>
           <%= submit_tag t(:label_delete),  data: { confirm: t(:label_are_you_sure) },  class: "delete_semester"%>
         <%end%>
+
       </li>
     <%end%>
   </ul>
   <%end%>
 </div>
-<%= render partial: "new_semester"%>
 <%= render partial: "sidebar"%>
+<%= render partial: "new_semester"%>

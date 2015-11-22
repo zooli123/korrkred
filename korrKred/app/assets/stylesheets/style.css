@@ -10,6 +10,10 @@
   width:200px;
 }
 
+#save_semester_button{
+  top: 310px;
+}
+
 .btn.not_logged{
   margin-top: 15px;
   margin-bottom: 15px;
@@ -33,7 +37,15 @@ body{
 }
 
 ul li{
-  margin-left: 30px;
+  list-style-type: none;
+}
+
+ul li .btn{
+  position: relative;
+  left: 30px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 /**/
 #new_semester, #new_subject{
@@ -88,6 +100,11 @@ ul li{
   left: 10%;
 }
 
+.btn.semester-year-button{
+  width: 60%;
+  background: #DCE1E3;
+}
+
 .sign_up_div, .login_div{
   position: relative;
   width: 300px;
@@ -107,6 +124,12 @@ h1{
 
 .navbar-brand{
   font-variant: small-caps;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: #DCE1E3 !important;
 }
 
 .h{
@@ -166,12 +189,10 @@ h2.semesters{
 }
 
 #sidebar{
-  z-index: -1;
   position: absolute;
   top:50px;
   right: 0;
   width: 300px;
-  height: 100%;
   background-color: #DCE1E3;
 }
 
@@ -181,12 +202,11 @@ h2.semesters{
 
 
 .page-content{
-  z-index: -4;
+  z-index: -1;
   position: absolute;
-  width: 100%;
-  min-width: 920px;
-  height: auto;
-  min-height: 100%;
-  overflow-y: auto;
-  overflow-x: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-width: 1016px;
 }

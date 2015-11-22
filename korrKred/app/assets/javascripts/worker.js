@@ -1,4 +1,7 @@
 $(document).ready(function(){
+  var height = Math.max( document.body.scrollHeight, document.body.offsetHeight,
+                       document.documentElement.clientHeight, document.documentElement.scrollHeight,
+                       document.documentElement.offsetHeight );
 
   $("input[name=delete_subject]").on("click", function(e){
     confirmation(e);
@@ -6,6 +9,13 @@ $(document).ready(function(){
   $("input[name=delete_subject_from_semester]").on("click", function(e){
     confirmation(e);
   })
+
+
+  $("#sidebar").css("height", height);
+
+  window.addEventListener("resize", function(){
+    $("#sidebar").css("height", height);
+  });
 
   set_active_page();
 
