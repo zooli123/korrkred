@@ -22,11 +22,6 @@ $(document).ready(function(){
   });
 
   set_active_page();
-
-  $(".credit_index").on("mouseover", function(){
-    var message = gon.label_withdrawn + ": " + gon.withdrawn_credits + "\n" + gon.label_accomplished + ": " + gon.accomplished_credits;
-    $(this).prop("title", message)
-  })
 })
 
 function confirmation(e){

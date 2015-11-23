@@ -1,4 +1,13 @@
-<h2 class="semesters"><%=@semester_title%>:<span class="credit_index label label-default" title=""><%=@k_credit_index%></span></h2>
+<h2 class="semesters"><%=@semester_title%>:</h2>
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><%=@k_credit_index%>
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+    <li class="index_details"><%=t(:label_accomplished)%>: <%=@accomplished_credits%></li>
+    <li class="index_details"><%=t(:label_withdrawn)%>: <%=@withdrawn_credits%></li>
+  </ul>
+</div>
+
 <div class="semesters_set_div">
   <table class="table table-condensed table-hover">
     <%if @subjects.size != 0%>

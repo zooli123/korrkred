@@ -1,7 +1,7 @@
 class KorrkredController < ApplicationController
   before_action :require_login
 
-	def index		
+	def index
 	end
 
 	def home
@@ -260,36 +260,28 @@ def actual_index_counting
 		end
 
 		sum = 0
-		withdrawn_credits = 0
-		accomplished_credits = 0
+		@withdrawn_credits = 0
+		@accomplished_credits = 0
 
 		grades_credits.each do |grade, credit|
 			if credit.to_i != 0 && grade.to_i != 1
 				sum += credit.to_i * grade.to_i
 			end
 			if grade.to_i != 1
-				accomplished_credits += credit.to_i
+				@accomplished_credits += credit.to_i
 			end
-			withdrawn_credits += credit.to_i
+			@withdrawn_credits += credit.to_i
 		end
 
 		# javascript-hez:
-		gon.withdrawn_credits = withdrawn_credits
-		gon.accomplished_credits = accomplished_credits
-		gon.label_withdrawn = t(:label_withdrawn)
-		gon.label_accomplished = t(:label_accomplished)
 		gon.are_you_sure = t(:label_are_you_sure)
 
 		credit_index = (sum.to_f / 30)
-		k_credit_index = credit_index * (accomplished_credits.to_f / withdrawn_credits.to_f)
+		k_credit_index = credit_index * (@accomplished_credits.to_f / @withdrawn_credits.to_f)
 		actual_semester = Semester.find(params[:id])
 		actual_semester.update(credit_index: k_credit_index.round(2))
 	else
 		actual_semester.update(credit_index: 0.0)
-		gon.withdrawn_credits = 0
-		gon.accomplished_credits = 0
-		gon.label_withdrawn = t(:label_withdrawn)
-		gon.label_accomplished = t(:label_accomplished)
 		gon.are_you_sure = t(:label_are_you_sure)
 
 	end

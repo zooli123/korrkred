@@ -27,6 +27,10 @@ body{
   padding-bottom: 100px;
 }
 
+.label.label-primary{
+  padding: 10px 20px;
+}
+
 .alert{
   margin-top: 50px;
 }
@@ -149,6 +153,17 @@ h2.semesters{
   position: relative;
   top: 110px;
   margin-left: 5%;
+  width: 35%;
+}
+
+.semester_title{
+  width: 40%;
+}
+
+.dropdown{
+  position:absolute;
+  top: 63px;
+  left:42%;
 }
 
 .language_selection.not_logged{
@@ -170,10 +185,12 @@ h2.semesters{
   margin-top: 5px;
 }
 
-.credit_index{
-  position: absolute;
-  left: 30%;
-  margin-left: 10px;
+.index_details{
+  margin: 5px 20px;
+}
+
+#menu1{
+  font-size: 20px;
 }
 
 .delete_semester{
