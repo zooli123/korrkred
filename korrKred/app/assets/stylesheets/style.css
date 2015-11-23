@@ -164,6 +164,7 @@ h2.semesters{
   position:absolute;
   top: 63px;
   left:42%;
+  width: 220px;
 }
 
 .language_selection.not_logged{
