@@ -52,7 +52,6 @@ class KorrkredController < ApplicationController
 
 	def change_subject
 		actual_subject = Subject.find(params[:subject_id])
-
 		if params[:delete_subject]
 			actual_subject.destroy
 		elsif params[:change_credit]
@@ -81,7 +80,6 @@ class KorrkredController < ApplicationController
 		@current_user = current_user
 		saved_semester = false
 		error_existing_title = false
-
 		if(params[:semester] && params[:semester][:year] && params[:semester][:half_year])
 			semester_year = params[:semester][:year]
 			semester_half_year = params[:semester][:half_year]
@@ -134,7 +132,6 @@ class KorrkredController < ApplicationController
 	end
 
 	def delete_semester
-		puts "semester: " + params[:semester_id].to_s
 		semester = Semester.find(params[:semester_id])
 		semester.destroy
 		respond_to do |format|

@@ -1,12 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   login: test1
   password: pass
   firstname: First
   lastname: Test
 
 two:
+  id: 2
   login: test2
   password: pass
   firstname: Second
